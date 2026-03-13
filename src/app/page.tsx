@@ -17,6 +17,7 @@ export default async function Home() {
     // Default values if settings not found
     const heroTitle = settingsMap.heroTitle || "Монголын Зуслангийн Салбарын";
     const heroSubtitle = settingsMap.heroSubtitle || "Хүүхдийн хөгжил, хамгаалал, оролцоонд суурилсан зуслангийн хөгжлийн үндэсний тогтолцоо.";
+    const heroImage = settingsMap.heroImage || "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1500&auto=format&fit=crop";
     const stat1Year = settingsMap.stat1Year || "2006";
     const stat1Label = settingsMap.stat1Label || "Байгуулагдсан он";
     const stat2Number = settingsMap.stat2Number || "100+";
@@ -113,8 +114,8 @@ export default async function Home() {
                             <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] w-full overflow-hidden" 
                                  style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}>
                                 <img 
-                                    src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1500&auto=format&fit=crop" 
-                                    alt="Kids jumping at camp" 
+                                    src={heroImage} 
+                                    alt="Hero Image" 
                                     className="w-full h-full object-cover object-center"
                                 />
                             </div>

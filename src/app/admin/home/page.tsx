@@ -7,6 +7,7 @@ export default function AdminHomeSettings() {
     const [settings, setSettings] = useState({
         heroTitle: "Монголын Зуслангийн Салбарын 100 Жилийн Ой",
         heroSubtitle: "Хүүхдийн хөгжил, хамгаалал, оролцоонд суурилсан зуслангийн хөгжлийн үндэсний тогтолцоо.",
+        heroImage: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1500&auto=format&fit=crop",
         stat1Year: "2006",
         stat1Label: "Байгуулагдсан он",
         stat2Number: "100+",
@@ -114,6 +115,22 @@ export default function AdminHomeSettings() {
                             rows={3}
                             className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium leading-none">Зурагны холбоос (URL)</label>
+                        <input
+                            type="text"
+                            name="heroImage"
+                            value={settings.heroImage}
+                            onChange={handleChange}
+                            placeholder="Жишээ: https://images.unsplash.com/..."
+                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        />
+                        {settings.heroImage && (
+                            <div className="mt-2 w-48 aspect-[4/5] rounded-xl overflow-hidden border">
+                                <img src={settings.heroImage} alt="Hero Preview" className="w-full h-full object-cover" />
+                            </div>
+                        )}
                     </div>
                 </div>
 
