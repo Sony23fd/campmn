@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/camps/layout,_N_T_/camps/page,_N_T_/camps"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/camps/__PAGE__",
+    "/camps",
+    "/_index",
+    "/_head"
+  ]
+}
