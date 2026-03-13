@@ -2,6 +2,8 @@ import Link from "next/link";
 import PartnerCarousel from "@/components/PartnerCarousel";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 // Removed static latestNews array
 
 export default async function Home() {

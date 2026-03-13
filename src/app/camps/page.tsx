@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useEffect, useState, useMemo } from "react";
 
+export const dynamic = "force-dynamic";
+
 interface Camp {
     id: string;
     name: string;

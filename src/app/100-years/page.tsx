@@ -7,6 +7,8 @@ export const metadata: Metadata = {
     description: "Монголын Үндэсний Зуслангуудын Холбооны 100 жилийн ойн арга хэмжээ, хөтөлбөрүүд",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function AnniversaryPage() {
     // Татаж авах хэрэгтэй бүх тохиргоог нэгтгэнэ
     const dbSettings = await prisma.siteSetting.findMany({

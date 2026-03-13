@@ -22,6 +22,8 @@ const demoPosts: Post[] = [
 
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function NewsPage() {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);

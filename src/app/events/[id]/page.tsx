@@ -4,6 +4,8 @@ import EventDetailRegisterButton from "@/components/EventDetailRegisterButton";
 import Link from "next/link";
 import { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const params = await props.params;
     const event = await prisma.event.findUnique({ where: { id: params.id } });

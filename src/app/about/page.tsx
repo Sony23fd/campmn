@@ -3,6 +3,8 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import PartnerCarousel from "@/components/PartnerCarousel";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
     title: "Бидний тухай | МҮЗХ",
     description: "Монголын Үндэсний Зуслангуудын Холбооны Танилцуулга",
