@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Хэрэглэгчид буюу Админ системд нэвтрэх хүмүүс
+model User {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email     String   @unique
+  password  String?  // Password for admin login
+  name      String?
+  role      Role     @default(EDITOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  posts     Post[]   @relation("UserPosts")
+}
+
+enum Role {
+  SUPERADMIN
+  EDITOR
+}
+
+// Зуслангуудын мэдээлэл
+model Camp {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name          String   @unique // Зуслангийн нэр
+  description   String?  @db.Text // Танилцуулга
+  location      String?  // Байршил
+  capacity      Int?     // Хүлээн авах хүчин чадал
+  establishedAt Int?     // Байгуулагдсан он
+  
+  contactPhone  String?
+  contactEmail  String?
+  website       String?
+
+  imageUrl      String?  // Зураг
+  
+  ageCategories String?  // Насны ангилал (жишээ нь: 6-18 нас)
+  campDirection String?  // Үйл ажиллагааны чиглэл
+  locationMapUrl String? @db.Text // Google Maps iframe зэрэг урт холбоос
+  shiftsData    Json?    // Ээлжүүдийн мэдээлэл (Json array)
+  programsData  Json?    // Хөтөлбөрүүдийн мэдээлэл (Json array)
+  groupsData    Json?    // Бүлгүүдийн танилцуулга (Json array)
+
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  programs      Program[] // Тус зусланд хэрэгждэг хөтөлбөрүүд
+}
+
+// Мэдээ мэдээлэл болон 100 жилийн ойн контентууд (CMS)
+model Post {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title     String
+  slug      String   @unique
+  content   String   @db.Text // TipTap/Quill-ийн HTML юмуу JSON дата орно
+  excerpt   String?  @db.Text
+  imageUrl  String?
+  
+  type      PostType @default(NEWS) // Мэдээ эсвэл Түүхэн ойн контент эсэх
+  
+  published Boolean  @default(false)
+  authorId  String   @db.Uuid
+  author    User     @relation("UserPosts", fields: [authorId], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum PostType {
+  NEWS
+  ANNIVERSARY_100
+  BOARD_MEMBER // Удирдах болон хяналтын зөвлөлийн гишүүд
+}
+
+// Арга хэмжээ, олон улсын хурлууд болон солилцооны хөтөлбөрүүд
+model Event {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  description String?  @db.Text
+  content     String?  @db.Text // Full detail content, HTML
+  startDate   DateTime
+  endDate     DateTime?
+  location    String?
+  imageUrl    String? // Image for the card and detail page
+  
+  eventType   EventType // Хурал, сургалт эсвэл солилцооны хөтөлбөр
+  
+  isOpen      Boolean  @default(true) // Бүртгэл нээлттэй эсэх
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  registrations Registration[]
+}
+
+enum EventType {
+  CONFERENCE
+  EXCHANGE_PROGRAM // Артек гэх мэт солилцоо
+  TRAINING
+  OTHER
+}
+
+// Үйл ажиллагаанд бүртгүүлсэн оролцогчдын мэдээлэл
+model Registration {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  eventId     String   @db.Uuid
+  event       Event    @relation(fields: [eventId], references: [id])
+  
+  firstName   String
+  lastName    String
+  email       String
+  phone       String
+  
+  // Хүүхэд байх юм бол нэмэлт мэдээлэл (Артек г.м)
+  age         Int?
+  school      String?
+  
+  status      RegistrationStatus @default(PENDING)
+  
+  createdAt   DateTime @default(now())
+}
+
+enum RegistrationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+// Зусланд хэрэгждэг тусгай хөтөлбөрүүд (Programs)
+model Program {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campId      String   @db.Uuid
+  camp        Camp     @relation(fields: [campId], references: [id])
+  
+  name        String
+  description String?  @db.Text
+  price       Decimal? @db.Decimal(10, 2)
+  duration    String?  // Жишээ нь: 7 хоног
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Вэбсайтын ерөнхий тохиргоо (Нүүр хуудасны текстүүд гэх мэт)
+model SiteSetting {
+  key         String   @id
+  value       String   @db.Text
+  description String?  @db.Text
+  updatedAt   DateTime @updatedAt
+}
+
+// Хамтран ажиллагч байгууллагууд (Нүүр хуудасны логонууд)
+model Partner {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String
+  type      String   // Жишээ нь: "Олон Улсын Байгууллага"
+  logo      String?  // Лого зурагны URL
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
