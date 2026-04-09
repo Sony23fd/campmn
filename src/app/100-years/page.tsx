@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import PartnerCarousel from "@/components/PartnerCarousel";
 import WaveHeader from "../../components/WaveHeader";
+import AnniversaryEvents from "@/components/AnniversaryEvents";
 
 export const metadata: Metadata = {
     title: "100 Жилийн Ой — Түүхэн замнал | МҮЗХ",
@@ -57,6 +58,13 @@ export default async function AnniversaryPage() {
     const researchPosts = await prisma.post.findMany({
         where: { type: "RESEARCH", published: true },
         orderBy: { createdAt: "desc" },
+    });
+
+    // Fetch Events for the events section
+    const anniversaryEvents = await prisma.event.findMany({
+        where: { isOpen: true },
+        orderBy: { startDate: "asc" },
+        take: 3
     });
 
     // Accordions
@@ -143,106 +151,17 @@ export default async function AnniversaryPage() {
                 </div>
             </section>
 
-            {/* ===== PROGRAMS / ACCORDIONS SECTION ===== */}
-            {accordions && accordions.length > 0 && (
-                <section className="relative z-10 pb-24">
-                    <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl font-black text-[#0F1B3D] mb-4">{introTitle}</h2>
-                            <p className="text-slate-500 font-medium max-w-2xl mx-auto">{introText}</p>
-                        </div>
-                        <div className="space-y-4">
-                            {accordions.map((item: {title: string, content: string}, i: number) => (
-                                <details key={i} className="group bg-white rounded-2xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden overflow-hidden">
-                                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-lg text-[#0F1B3D] hover:bg-slate-50 transition-colors">
-                                        {item.title}
-                                        <span className="shrink-0 ml-4 flex items-center justify-center w-8 h-8 rounded-full border border-slate-200 bg-white group-open:-rotate-180 transition-transform duration-300">
-                                            <svg className="w-5 h-5 text-[#D4A843]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                            </svg>
-                                        </span>
-                                    </summary>
-                                    <div className="p-6 pt-0 text-slate-600 font-medium leading-relaxed border-t border-slate-100 bg-slate-50/50">
-                                        {item.content}
-                                    </div>
-                                </details>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
 
-            {/* ===== TIMELINE SECTION ===== */}
-            <section className="relative z-10 pb-24">
-                <div className="container mx-auto px-4 md:px-6">
-                    {/* TIMELINE TITLE */}
-                    <div className="text-center mb-16 space-y-4">
-                        <div className="inline-flex items-center gap-2 bg-[#F5C542]/10 text-[#D4A843] px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-[#F5C542]/20 shadow-sm">
-                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                            Түүхэн замнал
-                        </div>
-                        <h2 className="text-4xl font-black">Түүхэн замнал</h2>
-                    </div>
 
-                    {/* TIMELINE COMPONENT */}
-                    <div className="relative max-w-5xl mx-auto">
-                        {/* Golden Center Line */}
-                        <div className="absolute left-12 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#F5C542]/0 via-[#F5C542] to-[#F5C542]/0 -translate-x-1/2 rounded-full" />
+            {/* ===== ANNIVERSARY EVENTS SECTION ===== */}
+            <AnniversaryEvents 
+                events={anniversaryEvents.map(e => ({
+                    ...e,
+                    startDate: e.startDate.toISOString(), // Ensure serializable
+                }))} 
+            />
 
-                        <div className="space-y-16">
-                            {timeline.length > 0 ? (timeline as any[]).map((event: any, index: number) => (
-                                <div key={event.id} className={`relative flex items-center w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} flex-row justify-end md:justify-center`}>
 
-                                    {/* Golden Dot */}
-                                    <div className="absolute left-12 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#F5C542] shadow-[0_0_15px_rgba(245,197,66,0.5)] z-10 flex items-center justify-center">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#0F1B3D]" />
-                                    </div>
-
-                                    {/* Year indicator pointing to dot */}
-                                    <div className={`absolute left-20 md:left-auto md:w-0 w-auto ${index % 2 === 0 ? 'md:right-1/2 md:pr-10 md:text-right' : 'md:left-1/2 md:pl-10 md:text-left'} -mt-8 md:mt-0 font-black text-3xl md:text-5xl text-[#0F1B3D]/10 z-0 select-none`}>
-                                        {event.year}
-                                    </div>
-
-                                    {/* Content Card (Image + Text overlapping) */}
-                                    <div className={`w-[calc(100%-60px)] md:w-[45%] ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} relative z-10 group`}>
-                                        <div className="relative">
-                                            {/* Image Layer */}
-                                            {(event.imageUrl || event.videoUrl) && (
-                                                <div className="relative aspect-[4/3] md:aspect-[3/2] w-full rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-white/50">
-                                                    {event.videoUrl ? (
-                                                        <div className="w-full h-full bg-slate-900 absolute inset-0">
-                                                            {/* Fake Play Button for styling if needed, or straight iframe */}
-                                                            <iframe className="w-full h-full relative z-10" src={event.videoUrl} frameBorder="0" allowFullScreen />
-                                                        </div>
-                                                    ) : (
-                                                        <img src={event.imageUrl!} alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                                                    )}
-                                                </div>
-                                            )}
-
-                                            {/* Text Block overlapping/attached bottom */}
-                                            <div className={`relative ${event.imageUrl || event.videoUrl ? '-mt-10 mx-4 md:-mt-12 md:mx-6' : 'mx-0'} bg-white/90 backdrop-blur-xl rounded-2xl p-5 md:p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] border border-white z-20 transition-transform group-hover:-translate-y-2 duration-300`}>
-                                                <h3 className="text-lg md:text-xl font-bold text-[#0F1B3D] leading-tight mb-2">
-                                                    {event.title}
-                                                </h3>
-                                                {event.description && (
-                                                    <p className="text-slate-500 font-medium text-xs md:text-sm leading-relaxed line-clamp-3">
-                                                        {event.description}
-                                                    </p>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )) : (
-                                <div className="text-center py-20 text-slate-400 font-medium">
-                                    Түүхэн замналын мэдээлэл одоогоор алга байна.
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* ===== PARTNERS SECTION ===== */}
             <div className="relative z-10 bg-white pt-10">

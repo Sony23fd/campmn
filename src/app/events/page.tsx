@@ -81,7 +81,7 @@ export default function EventsPage() {
                 ) : events.length > 0 ? (
                     <div className="space-y-12">
                         {/* FEATURED GRID (1 LARGE + 2 SMALL) */}
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                             {/* Large Featured Card */}
                             {featuredEvent && (
                                 <div className="lg:col-span-7 xl:col-span-7">
@@ -97,12 +97,13 @@ export default function EventsPage() {
                             <div className="lg:col-span-12 lg:hidden"></div> {/* Spacer for mobile */}
                             <div className="lg:col-span-5 xl:col-span-5 flex flex-col gap-6">
                                 {secondaryEvents.map(event => (
-                                    <SecondaryEventCard 
-                                        key={event.id} 
-                                        event={event} 
-                                        openModal={openModal} 
-                                        parseDateInfo={parseDateInfo}
-                                    />
+                                    <div key={event.id} className="flex-1">
+                                        <SecondaryEventCard 
+                                            event={event} 
+                                            openModal={openModal} 
+                                            parseDateInfo={parseDateInfo}
+                                        />
+                                    </div>
                                 ))}
                             </div>
                         </div>
@@ -192,7 +193,7 @@ function SecondaryEventCard({ event, openModal, parseDateInfo }: any) {
     const { month, day } = parseDateInfo(event.startDate);
 
     return (
-        <div className="group bg-white rounded-3xl border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col sm:flex-row transition-all duration-300 hover:shadow-xl h-full sm:h-[180px]">
+        <div className="group bg-white rounded-3xl border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col sm:flex-row transition-all duration-300 hover:shadow-xl h-full">
             {/* Image Thumbnail */}
             <div className="w-full sm:w-1/3 relative overflow-hidden bg-slate-50 flex-shrink-0">
                 {event.imageUrl ? (
