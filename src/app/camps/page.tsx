@@ -7,12 +7,9 @@ interface Camp {
     name: string;
     description: string;
     location: string;
-    capacity: number;
     imageUrl?: string;
     ageCategories?: string;
     capacity: number;
-    imageUrl?: string;
-    ageCategories?: string;
     campDirection?: string;
     badge?: string;
 }

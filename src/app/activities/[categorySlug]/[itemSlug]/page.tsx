@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: { params: { categorySlug: string; itemSlug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ categorySlug: string; itemSlug: string }> }) {
     const p = await params;
     const item = await prisma.activityItem.findUnique({
         where: { slug: p.itemSlug },
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { categorySlug: str
     };
 }
 
-export default async function ActivityItemPage({ params }: { params: { categorySlug: string; itemSlug: string } }) {
+export default async function ActivityItemPage({ params }: { params: Promise<{ categorySlug: string; itemSlug: string }> }) {
     const p = await params;
 
     const item = await prisma.activityItem.findUnique({

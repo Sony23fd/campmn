@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 
-export async function DELETE(request: Request, context: { params: { id: string } }) {
+export async function DELETE(request: Request, context: { params: Promise<{ id: string }> }) {
     const params = await context.params;
     try {
         const doc = await prisma.document.findUnique({ where: { id: params.id } });
@@ -23,7 +23,7 @@ export async function DELETE(request: Request, context: { params: { id: string }
     }
 }
 
-export async function PATCH(request: Request, context: { params: { id: string } }) {
+export async function PATCH(request: Request, context: { params: Promise<{ id: string }> }) {
     const params = await context.params;
     try {
         const contentType = request.headers.get("content-type") || "";

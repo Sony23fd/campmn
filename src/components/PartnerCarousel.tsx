@@ -14,7 +14,7 @@ const demoPartners = [
 ];
 
 export default async function PartnerCarousel() {
-    let dbPartners = [];
+    let dbPartners: any[] = [];
     try {
         dbPartners = await prisma.partner.findMany({
             where: { isActive: true },
