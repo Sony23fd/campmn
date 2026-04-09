@@ -25,6 +25,7 @@ export async function PUT(request: Request, context: { params: Promise<{ id: str
                 imageUrl: data.imageUrl,
                 eventType: data.eventType,
                 isOpen: data.isOpen !== undefined ? data.isOpen : true,
+                isFeatured: data.isFeatured !== undefined ? data.isFeatured : false,
             },
         });
         return NextResponse.json(event);

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import ImageUpload from "@/components/ImageUpload";
 
 export default function AdminAboutPage() {
     // ---- SETTINGS STATE ----
@@ -10,7 +11,16 @@ export default function AdminAboutPage() {
         about_hero_title: "БИДНИЙ ТУХАЙ",
         about_hero_subtitle: "Монголын Үндэсний Зуслангуудын Холбооны Танилцуулга",
         about_mission_text: "Монголын Үндэсний Зуслангуудын Холбоо (МҮЗХ) нь үүсгэн байгуулагч гишүүдийн санаачилгаар 2006 онд байгуулагдсан үндэсний хэмжээний гишүүддээ үйлчилдэг төрийн бус байгууллага юм. Тус холбоо нь Монгол Улсад үйл ажиллагаа явуулж буй хүүхдийн зуслангуудыг өмчийн хэлбэр үл харгалзан нэгтгэн зохион байгуулж, салбарын хөгжлийг бодлогын түвшинд дэмжих, мэргэжил арга зүйн зөвлөгөө өгөх, хүний нөөцийн чадавхыг бэхжүүлэх, гишүүн байгууллагуудын тогтвортой хөгжлийг хангах чиглэлээр ажиллаж байна.",
-        about_timeline: '[{"year":"2006","title":"Үүсгэн байгуулагдсан","description":"Монгол улсад үйл ажиллагаа явуулж буй зуслангуудыг нэгтгэв."},{"year":"2012","title":"ОУЗХ-ны гишүүн","description":"Олон улсын зуслангийн холбоо (ICF)-ны жинхэнэ гишүүн байгууллага болсон."},{"year":"2025","title":"Ази, Номхон далай","description":"Ази, номхон далайн орнуудын зуслангийн холбоог үүсгэн байгууллаа."}]'
+        about_timeline: '[{"year":"2006","title":"Үүсгэн байгуулагдсан","description":"Монгол улсад үйл ажиллагаа явуулж буй зуслангуудыг нэгтгэв."},{"year":"2012","title":"ОУЗХ-ны гишүүн","description":"Олон улсын зуслангийн холбоо (ICF)-ны жинхэнэ гишүүн байгууллага болсон."},{"year":"2025","title":"Ази, Номхон далай","description":"Ази, номхон далайн орнуудын зуслангийн холбоог үүсгэн байгууллаа."}]',
+        about_intro_title: "МОНГОЛЫН ҮНДЭСНИЙ ЗУСЛАНГУУДЫН ХОЛБООНЫ ТАНИЛЦУУЛГА",
+        about_intro_text: "",
+        about_intro_image: "",
+        about_vision_title: "Алсын хараа",
+        about_vision_text: "",
+        about_vision_image: "",
+        about_structure_title: "Бүтэц засаглал",
+        about_structure_text: "",
+        about_structure_image: "",
     });
     const [loadingSettings, setLoadingSettings] = useState(true);
     const [savingSettings, setSavingSettings] = useState(false);
@@ -132,12 +142,16 @@ export default function AdminAboutPage() {
 
     // ---- POSTS HANDLERS (BOARD MEMBERS) ----
     const generateSlug = (text: string) => {
-        return text.toString().toLowerCase()
+        const slug = text.toString().toLowerCase()
             .replace(/\s+/g, '-')
-            .replace(/[^\w\-]+/g, '')
+            // Allow cyrillic characters: \u0400-\u04FF
+            .replace(/[^\w\-\u0400-\u04FF]+/g, '')
             .replace(/\-\-+/g, '-')
             .replace(/^-+/, '')
             .replace(/-+$/, '');
+        
+        // If slug is empty (e.g. only special characters), use a timestamp
+        return slug || `member-${Date.now()}`;
     };
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -237,14 +251,10 @@ export default function AdminAboutPage() {
                 
                 <div className="px-6 space-y-4">
                     <div className="space-y-2">
-                        <label className="text-sm font-medium leading-none">Толгой Зураг (Hero Image URL)</label>
-                        <input
-                            type="text"
-                            name="about_hero_image"
-                            value={settings.about_hero_image}
-                            onChange={handleSettingsChange}
-                            className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-                            placeholder="Зургийн линк (unsplash г.м)"
+                        <label className="text-sm font-medium leading-none">Толгой Зураг (Hero Image/Upload)</label>
+                        <ImageUpload
+                            value={settings.about_hero_image || ""}
+                            onChange={(url) => setSettings({ ...settings, about_hero_image: url })}
                         />
                     </div>
                     
@@ -277,14 +287,114 @@ export default function AdminAboutPage() {
                             name="about_mission_text"
                             value={settings.about_mission_text}
                             onChange={handleSettingsChange}
-                            rows={5}
+                            rows={4}
                             className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                         />
                     </div>
 
+                    <div className="pt-4 border-t mt-6 space-y-6">
+                        <h3 className="text-lg font-medium text-slate-800">2. Танилцуулга Хэсэг (Introduction)</h3>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Танилцуулгын Гарчиг</label>
+                                <input
+                                    type="text"
+                                    name="about_intro_title"
+                                    value={settings.about_intro_title}
+                                    onChange={handleSettingsChange}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                    placeholder="МОНГОЛЫН ҮНДЭСНИЙ ЗУСЛАНГУУДЫН ХОЛБООНЫ ТАНИЛЦУУЛГА"
+                                />
+                            </div>
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Танилцуулгын Текст</label>
+                                <textarea
+                                    name="about_intro_text"
+                                    value={settings.about_intro_text}
+                                    onChange={handleSettingsChange}
+                                    rows={4}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                />
+                            </div>
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Танилцуулгын Зураг</label>
+                                <ImageUpload
+                                    value={settings.about_intro_image || ""}
+                                    onChange={(url) => setSettings({ ...settings, about_intro_image: url })}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="pt-4 border-t mt-6 space-y-6">
+                        <h3 className="text-lg font-medium text-slate-800">3. Алсын Хараа Хэсэг (Vision)</h3>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Алсын Хараа Гарчиг</label>
+                                <input
+                                    type="text"
+                                    name="about_vision_title"
+                                    value={settings.about_vision_title}
+                                    onChange={handleSettingsChange}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                />
+                            </div>
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Алсын Хараа Текст</label>
+                                <textarea
+                                    name="about_vision_text"
+                                    value={settings.about_vision_text}
+                                    onChange={handleSettingsChange}
+                                    rows={4}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                />
+                            </div>
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Алсын Хараа Зураг/Икон</label>
+                                <ImageUpload
+                                    value={settings.about_vision_image || ""}
+                                    onChange={(url) => setSettings({ ...settings, about_vision_image: url })}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="pt-4 border-t mt-6 space-y-6">
+                        <h3 className="text-lg font-medium text-slate-800">4. Бүтэц Засаглал Хэсэг (Structure)</h3>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Бүтэц Засаглал Гарчиг</label>
+                                <input
+                                    type="text"
+                                    name="about_structure_title"
+                                    value={settings.about_structure_title}
+                                    onChange={handleSettingsChange}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                />
+                            </div>
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Бүтэц Засаглал Текст</label>
+                                <textarea
+                                    name="about_structure_text"
+                                    value={settings.about_structure_text}
+                                    onChange={handleSettingsChange}
+                                    rows={4}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                />
+                            </div>
+                            <div className="space-y-2 col-span-2">
+                                <label className="text-sm font-medium leading-none">Бүтэц Засаглал Зураг (Бүдүүвч г.м)</label>
+                                <ImageUpload
+                                    value={settings.about_structure_image || ""}
+                                    onChange={(url) => setSettings({ ...settings, about_structure_image: url })}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="pt-4 border-t mt-6">
                         <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-lg font-medium">Түүхэн замнал (Timeline)</h3>
+                            <h3 className="text-lg font-medium">5. Түүхэн замнал (Timeline)</h3>
                             <button
                                 type="button"
                                 onClick={addTimelineEvent}
@@ -405,13 +515,10 @@ export default function AdminAboutPage() {
                                     />
                                 </div>
                                 <div className="space-y-2 col-span-2 md:col-span-1">
-                                    <label className="text-sm font-medium">Цээж Зураг (URL)</label>
-                                    <input
-                                        type="text"
+                                    <label className="text-sm font-medium">Цээж Зураг (URL/Upload)</label>
+                                    <ImageUpload
                                         value={formData.imageUrl}
-                                        onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                                        className="w-full border rounded-md px-3 py-2 text-sm"
-                                        placeholder="Зургийн линк оруулна уу"
+                                        onChange={(url) => setFormData({ ...formData, imageUrl: url })}
                                     />
                                 </div>
                                 <div className="space-y-2 col-span-2">

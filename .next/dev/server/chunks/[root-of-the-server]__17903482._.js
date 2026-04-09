@@ -120,6 +120,7 @@ async function POST(request) {
                 shiftsData: body.shiftsData,
                 programsData: body.programsData,
                 groupsData: body.groupsData,
+                badge: body.badge,
                 isActive: body.isActive ?? true
             }
         });

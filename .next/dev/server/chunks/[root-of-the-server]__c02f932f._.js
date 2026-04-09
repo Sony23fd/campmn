@@ -95,6 +95,7 @@ async function PUT(request, context) {
                 shiftsData: data.shiftsData,
                 programsData: data.programsData,
                 groupsData: data.groupsData,
+                badge: data.badge,
                 isActive: data.isActive !== undefined ? data.isActive : true
             }
         });

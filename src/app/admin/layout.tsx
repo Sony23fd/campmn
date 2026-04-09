@@ -35,6 +35,9 @@ export default async function AdminLayout({ children }: { children: ReactNode })
                     <a href="/admin/anniversary" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
                         🎉 100 Жилийн Ой
                     </a>
+                    <a href="/admin/timeline" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
+                        ⏳ Түүхэн замнал
+                    </a>
 
                     <p className="px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 mt-6">Бичлэг ба Контент</p>
                     <a href="/admin/news" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
@@ -43,6 +46,9 @@ export default async function AdminLayout({ children }: { children: ReactNode })
                     <a href="/admin/events" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
                         📅 Арга хэмжээ, Бүртгэл
                     </a>
+                    <a href="/admin/activities" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
+                        🚀 Үйл ажиллагаа
+                    </a>
 
                     <p className="px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 mt-6">Мэдээллийн Сан</p>
                     <a href="/admin/camps" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
@@ -50,6 +56,12 @@ export default async function AdminLayout({ children }: { children: ReactNode })
                     </a>
                     <a href="/admin/partners" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
                         🤝 Түншүүд
+                    </a>
+                    <a href="/admin/documents" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
+                        📂 Хууль тогтоомж
+                    </a>
+                    <a href="/admin/faqs" className="block px-4 py-2 text-sm rounded-md hover:bg-slate-800 hover:text-white transition-colors">
+                        ❓ Зөвлөмж & FAQ
                     </a>
 
                     <p className="px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 mt-6">Тохиргоо</p>

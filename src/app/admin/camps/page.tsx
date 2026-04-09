@@ -2,12 +2,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ImageUpload from "@/components/ImageUpload";
 
 interface Camp {
     id: string;
     name: string;
     location: string;
     capacity: number;
+    badge?: string;
     isActive: boolean;
 }
 
@@ -30,6 +32,7 @@ export default function AdminCamps() {
         ageCategories: "",
         campDirection: "",
         locationMapUrl: "",
+        badge: "",
     });
 
     const [shifts, setShifts] = useState<{name: string, date: string, price: string}[]>([]);
@@ -111,6 +114,7 @@ export default function AdminCamps() {
             ageCategories: camp.ageCategories || "",
             campDirection: camp.campDirection || "",
             locationMapUrl: camp.locationMapUrl || "",
+            badge: camp.badge || "",
         });
         setShifts(camp.shiftsData ? (Array.isArray(camp.shiftsData) ? camp.shiftsData : JSON.parse(camp.shiftsData as string)) : []);
         setPrograms(camp.programsData ? (Array.isArray(camp.programsData) ? camp.programsData : JSON.parse(camp.programsData as string)) : []);
@@ -132,7 +136,7 @@ export default function AdminCamps() {
     const handleCancel = () => {
         setAdding(false);
         setEditingId(null);
-        setFormData({ name: "", description: "", location: "", capacity: "", establishedAt: "", contactPhone: "", contactEmail: "", website: "", imageUrl: "", ageCategories: "", campDirection: "", locationMapUrl: "" });
+        setFormData({ name: "", description: "", location: "", capacity: "", establishedAt: "", contactPhone: "", contactEmail: "", website: "", imageUrl: "", ageCategories: "", campDirection: "", locationMapUrl: "", badge: "" });
         setShifts([]);
         setPrograms([]);
         setGroups([]);
@@ -234,13 +238,10 @@ export default function AdminCamps() {
                                 />
                             </div>
                             <div className="space-y-2 col-span-2">
-                                <label className="text-sm font-medium">Зурагны холбоос (Image URL)</label>
-                                <input
-                                    type="text"
+                                <label className="text-sm font-medium">Зурагны холбоос (Image/Upload)</label>
+                                <ImageUpload
                                     value={formData.imageUrl}
-                                    onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                                    className="w-full border rounded-md px-3 py-2 text-sm"
-                                    placeholder="https://...зураг.jpg"
+                                    onChange={(url) => setFormData({ ...formData, imageUrl: url })}
                                 />
                             </div>
                             <div className="space-y-2">
@@ -251,6 +252,16 @@ export default function AdminCamps() {
                                     onChange={(e) => setFormData({ ...formData, ageCategories: e.target.value })}
                                     className="w-full border rounded-md px-3 py-2 text-sm"
                                     placeholder="Жишээ: 6-18 нас"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium">Онцлох/Топ Badge</label>
+                                <input
+                                    type="text"
+                                    value={formData.badge}
+                                    onChange={(e) => setFormData({ ...formData, badge: e.target.value })}
+                                    className="w-full border rounded-md px-3 py-2 text-sm"
+                                    placeholder="Топ, Онцлох, Зүүн бүс гэх мэт..."
                                 />
                             </div>
                             <div className="space-y-2">
@@ -323,11 +334,11 @@ export default function AdminCamps() {
                                             }} placeholder="Бүлгийн нэр (Ж нь: Ахлах бүлэг)" className="w-full border rounded px-2 py-1 text-sm mr-2" />
                                             <button type="button" onClick={() => setGroups(groups.filter((_, idx) => idx !== i))} className="text-red-500 font-bold px-4 ml-2">X</button>
                                         </div>
-                                        <input type="text" value={group.imageUrl || ""} onChange={(e) => {
+                                        <ImageUpload value={group.imageUrl || ""} onChange={(url) => {
                                             const newGroups = [...groups];
-                                            newGroups[i].imageUrl = e.target.value;
+                                            newGroups[i].imageUrl = url;
                                             setGroups(newGroups);
-                                        }} placeholder="Зурагны линк (https://...)" className="w-full border rounded px-2 py-1 text-sm bg-white" />
+                                        }} className="w-full" label="Бүлгийн зураг" />
                                         <textarea value={group.description} onChange={(e) => {
                                             const newGroups = [...groups];
                                             newGroups[i].description = e.target.value;
@@ -369,7 +380,10 @@ export default function AdminCamps() {
                         ) : (
                             camps.map(camp => (
                                 <tr key={camp.id} className="border-b hover:bg-slate-50">
-                                    <td className="px-4 py-3 font-medium">{camp.name}</td>
+                                    <td className="px-4 py-3 font-medium">
+                                        {camp.name}
+                                        {camp.badge && <span className="ml-2 bg-[#F5C542]/20 text-[#0F1B3D] text-[10px] px-2 py-0.5 rounded uppercase tracking-wider font-bold">{camp.badge}</span>}
+                                    </td>
                                     <td className="px-4 py-3 text-slate-500">{camp.location || "-"}</td>
                                     <td className="px-4 py-3 text-slate-500">{camp.capacity || "-"}</td>
                                     <td className="px-4 py-3">

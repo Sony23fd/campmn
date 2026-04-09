@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import ImageUpload from "@/components/ImageUpload";
 
 export default function SettingsPage() {
     const [settings, setSettings] = useState({
@@ -10,7 +11,24 @@ export default function SettingsPage() {
         contact_email: "info@zuslan.mn",
         contact_phone: "+976 99000000",
         address: "Улаанбаатар хот",
-        facebook_url: "https://facebook.com/zuslan"
+        facebook_url: "https://facebook.com/zuslan",
+        home_stat1_title: "1926",
+        home_stat1_subtitle: "Байгуулагдсан он",
+        home_stat2_title: "100+",
+        home_stat2_subtitle: "Бүртгэлтэй зуслан",
+        home_stat3_title: "2012",
+        home_stat3_subtitle: "ОУЗХ-ны гишүүн",
+        home_stat4_title: "15+",
+        home_stat4_subtitle: "ОУ-ын түншлэл",
+        hero_btn1_text: "Зуслан хайх",
+        hero_btn1_link: "/camps",
+        hero_btn2_text: "Бидний тухай",
+        hero_btn2_link: "/about",
+        hero_img1: "",
+        hero_img2: "",
+        hero_img3: "",
+        hero_img4: "",
+        hero_img5: "",
     });
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
@@ -132,6 +150,129 @@ export default function SettingsPage() {
                             onChange={handleChange}
                             className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                         />
+                    </div>
+                </div>
+
+                <div className="p-6 border rounded-xl bg-card text-card-foreground shadow-sm space-y-4 mt-6">
+                    <h2 className="text-xl font-semibold mb-4">Нүүр Хуудас - Товчнууд (Hero Header)</h2>
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Үндсэн товч (хар)</strong>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Текст</label>
+                                <input type="text" name="hero_btn1_text" value={settings.hero_btn1_text || ""} onChange={handleChange} placeholder="Зуслан хайх" className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Холбоос (Link)</label>
+                                <input type="text" name="hero_btn1_link" value={settings.hero_btn1_link || ""} onChange={handleChange} placeholder="/camps" className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                        </div>
+
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Хоёрдогч товч (цагаан)</strong>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Текст</label>
+                                <input type="text" name="hero_btn2_text" value={settings.hero_btn2_text || ""} onChange={handleChange} placeholder="Бидний тухай" className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Холбоос (Link)</label>
+                                <input type="text" name="hero_btn2_link" value={settings.hero_btn2_link || ""} onChange={handleChange} placeholder="/about" className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="p-6 border rounded-xl bg-card text-card-foreground shadow-sm space-y-4 mt-6">
+                    <h2 className="text-xl font-semibold mb-4">Нүүр Хуудас - Гэрэл зураг (Hero Bubbles)</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-6">
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Зураг 1 (Голд)</strong>
+                            <ImageUpload
+                                value={settings.hero_img1 || ""}
+                                onChange={(url) => setSettings(prev => ({ ...prev, hero_img1: url }))}
+                            />
+                        </div>
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Зураг 2 (Баруун дээд)</strong>
+                            <ImageUpload
+                                value={settings.hero_img2 || ""}
+                                onChange={(url) => setSettings(prev => ({ ...prev, hero_img2: url }))}
+                            />
+                        </div>
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Зураг 3 (Зүүн дээд)</strong>
+                            <ImageUpload
+                                value={settings.hero_img3 || ""}
+                                onChange={(url) => setSettings(prev => ({ ...prev, hero_img3: url }))}
+                            />
+                        </div>
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Зураг 4 (Зүүн доод)</strong>
+                            <ImageUpload
+                                value={settings.hero_img4 || ""}
+                                onChange={(url) => setSettings(prev => ({ ...prev, hero_img4: url }))}
+                            />
+                        </div>
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Зураг 5 (Баруун доод)</strong>
+                            <ImageUpload
+                                value={settings.hero_img5 || ""}
+                                onChange={(url) => setSettings(prev => ({ ...prev, hero_img5: url }))}
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="p-6 border rounded-xl bg-card text-card-foreground shadow-sm space-y-4 mt-6">
+                    <h2 className="text-xl font-semibold mb-4">Нүүр Хуудас - Тоон Үзүүлэлт (Stats)</h2>
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Стат 1</strong>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тоо / Гарчиг</label>
+                                <input type="text" name="home_stat1_title" value={settings.home_stat1_title || "1926"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тайлбар</label>
+                                <input type="text" name="home_stat1_subtitle" value={settings.home_stat1_subtitle || "Байгуулагдсан он"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                        </div>
+
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Стат 2</strong>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тоо / Гарчиг</label>
+                                <input type="text" name="home_stat2_title" value={settings.home_stat2_title || "100+"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тайлбар</label>
+                                <input type="text" name="home_stat2_subtitle" value={settings.home_stat2_subtitle || "Бүртгэлтэй зуслан"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                        </div>
+
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Стат 3</strong>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тоо / Гарчиг</label>
+                                <input type="text" name="home_stat3_title" value={settings.home_stat3_title || "2012"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тайлбар</label>
+                                <input type="text" name="home_stat3_subtitle" value={settings.home_stat3_subtitle || "ОУЗХ-ны гишүүн"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                        </div>
+
+                        <div className="space-y-4 p-4 border rounded bg-slate-50">
+                            <strong>Стат 4</strong>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тоо / Гарчиг</label>
+                                <input type="text" name="home_stat4_title" value={settings.home_stat4_title || "15+"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs font-medium text-slate-500">Тайлбар</label>
+                                <input type="text" name="home_stat4_subtitle" value={settings.home_stat4_subtitle || "ОУ-ын түншлэл"} onChange={handleChange} className="flex w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 

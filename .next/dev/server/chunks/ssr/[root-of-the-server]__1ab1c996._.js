@@ -203,6 +203,8 @@ async function PartnerCarousel() {
 __turbopack_context__.s([
     "default",
     ()=>AnniversaryPage,
+    "dynamic",
+    ()=>dynamic,
     "metadata",
     ()=>metadata
 ]);
@@ -216,6 +218,7 @@ const metadata = {
     title: "100 Жилийн Ой | МҮЗХ",
     description: "Монголын Үндэсний Зуслангуудын Холбооны 100 жилийн ойн арга хэмжээ, хөтөлбөрүүд"
 };
+const dynamic = "force-dynamic";
 async function AnniversaryPage() {
     // Татаж авах хэрэгтэй бүх тохиргоог нэгтгэнэ
     const dbSettings = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].siteSetting.findMany({
@@ -267,12 +270,12 @@ async function AnniversaryPage() {
                                     className: "w-full h-full object-contain drop-shadow-xl"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/100-years/page.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 60,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 56,
+                                lineNumber: 58,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -280,7 +283,7 @@ async function AnniversaryPage() {
                                 children: heroBadge
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 66,
+                                lineNumber: 68,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -288,7 +291,7 @@ async function AnniversaryPage() {
                                 children: heroTitle
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 69,
+                                lineNumber: 71,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -296,20 +299,20 @@ async function AnniversaryPage() {
                                 children: heroText
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 72,
+                                lineNumber: 74,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-full -z-10 bg-gradient-to-b from-primary/10 via-transparent to-transparent blur-3xl rounded-full"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 75,
+                                lineNumber: 77,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/100-years/page.tsx",
-                        lineNumber: 53,
+                        lineNumber: 55,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -323,18 +326,18 @@ async function AnniversaryPage() {
                             allowFullScreen: true
                         }, void 0, false, {
                             fileName: "[project]/src/app/100-years/page.tsx",
-                            lineNumber: 80,
+                            lineNumber: 82,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/100-years/page.tsx",
-                        lineNumber: 79,
+                        lineNumber: 81,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/100-years/page.tsx",
-                lineNumber: 52,
+                lineNumber: 54,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -348,7 +351,7 @@ async function AnniversaryPage() {
                                 children: introTitle
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 94,
+                                lineNumber: 96,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -356,13 +359,13 @@ async function AnniversaryPage() {
                                 children: introText
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 95,
+                                lineNumber: 97,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/100-years/page.tsx",
-                        lineNumber: 93,
+                        lineNumber: 95,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -382,17 +385,17 @@ async function AnniversaryPage() {
                                                         children: acc.title || "Гарчиггүй"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/100-years/page.tsx",
-                                                        lineNumber: 105,
+                                                        lineNumber: 107,
                                                         columnNumber: 45
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/100-years/page.tsx",
-                                                    lineNumber: 104,
+                                                    lineNumber: 106,
                                                     columnNumber: 41
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                                lineNumber: 103,
+                                                lineNumber: 105,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -411,23 +414,23 @@ async function AnniversaryPage() {
                                                         d: "M6 9l6 6 6-6"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/100-years/page.tsx",
-                                                        lineNumber: 109,
+                                                        lineNumber: 111,
                                                         columnNumber: 220
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/100-years/page.tsx",
-                                                    lineNumber: 109,
+                                                    lineNumber: 111,
                                                     columnNumber: 41
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 110,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/100-years/page.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 104,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -437,18 +440,18 @@ async function AnniversaryPage() {
                                             children: acc.content || "Дэлгэрэнгүй мэдээлэл оруулаагүй байна."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/100-years/page.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 115,
                                             columnNumber: 37
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/100-years/page.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 114,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 101,
+                                lineNumber: 103,
                                 columnNumber: 29
                             }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "text-center py-12 bg-white rounded-xl border border-dashed border-slate-300",
@@ -457,34 +460,34 @@ async function AnniversaryPage() {
                                 children: "Одоогоор арга хэмжээ, хөтөлбөрүүд нэмэгдээгүй байна."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/100-years/page.tsx",
-                                lineNumber: 119,
+                                lineNumber: 121,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/100-years/page.tsx",
-                            lineNumber: 118,
+                            lineNumber: 120,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/100-years/page.tsx",
-                        lineNumber: 98,
+                        lineNumber: 100,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/100-years/page.tsx",
-                lineNumber: 92,
+                lineNumber: 94,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$PartnerCarousel$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/100-years/page.tsx",
-                lineNumber: 126,
+                lineNumber: 128,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/100-years/page.tsx",
-        lineNumber: 50,
+        lineNumber: 52,
         columnNumber: 9
     }, this);
 }

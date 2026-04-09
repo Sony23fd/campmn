@@ -1,12 +1,20 @@
 {
-  "/100-years/page": "app/100-years/page.js",
   "/about/page": "app/about/page.js",
-  "/admin/page": "app/admin/page.js",
+  "/activities/page": "app/activities/page.js",
+  "/admin/about/page": "app/admin/about/page.js",
+  "/admin/camps/page": "app/admin/camps/page.js",
+  "/admin/events/page": "app/admin/events/page.js",
   "/api/camps/route": "app/api/camps/route.js",
+  "/api/events/[id]/route": "app/api/events/[id]/route.js",
   "/api/events/route": "app/api/events/route.js",
   "/api/posts/route": "app/api/posts/route.js",
+  "/api/settings/route": "app/api/settings/route.js",
+  "/api/upload/route": "app/api/upload/route.js",
   "/camps/page": "app/camps/page.js",
+  "/events/[id]/page": "app/events/[id]/page.js",
   "/events/page": "app/events/page.js",
+  "/legislation/page": "app/legislation/page.js",
   "/news/page": "app/news/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/recommendations/page": "app/recommendations/page.js"
 }

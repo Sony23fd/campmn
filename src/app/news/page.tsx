@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import WaveHeader from "@/components/WaveHeader";
 
 interface Post {
     id: string;
@@ -10,19 +12,16 @@ interface Post {
     imageUrl?: string;
     createdAt: string;
     type: string;
-    author: {
+    author?: {
         name: string;
     }
 }
+
 const demoPosts: Post[] = [
     { id: "1", slug: "demo-1", title: "Олон улсын зуслангийн эрдэмтэн судлаачдын хурал болно", excerpt: "Ази номхон далайн орнуудын болон бусад олон улсын судлаачид оролцох уг хурлын бүртгэл эхэллээ.", createdAt: "2024-03-01T00:00:00Z", type: "NEWS", author: { name: "Админ" } },
     { id: "2", slug: "demo-2", title: "Артектай хамтран ажиллах санамж бичиг зурлаа", excerpt: "Монголын хүүхэд багачуудыг ОХУ-ын Хар тэнгисийн эрэгт байрлах дэлхийд танигдсан Артек зусланд амраах хөтөлбөрийг албан ёсоор эхлүүллээ.", createdAt: "2024-03-05T00:00:00Z", type: "NEWS", author: { name: "Админ" } },
     { id: "3", slug: "demo-3", title: "Зуслангийн удирдлага, багш нарын сургалт", excerpt: "Зуны амралт эхлэхээс өмнө зуслангийн багш, ажилчдад зориулсан 3 өдрийн сургалтыг зохион байгууллаа.", createdAt: "2024-03-10T00:00:00Z", type: "NEWS", author: { name: "С.Батбилэг" } },
 ];
-
-import Link from "next/link";
-
-export const dynamic = "force-dynamic";
 
 export default function NewsPage() {
     const [posts, setPosts] = useState<Post[]>([]);
@@ -38,6 +37,7 @@ export default function NewsPage() {
                 }
             } catch (error) {
                 console.error("Failed to load news", error);
+                setPosts(demoPosts);
             } finally {
                 setLoading(false);
             }
@@ -46,83 +46,59 @@ export default function NewsPage() {
         fetchPosts();
     }, []);
 
-    const formatDate = (dateString: string) => {
-        return new Date(dateString).toLocaleDateString('mn-MN');
-    };
-
     return (
-        <div className="min-h-screen bg-slate-50 selection:bg-yellow-300 pb-24 font-sans">
-            {/* Playful Header Section */}
-            <div className="bg-yellow-400 pt-24 pb-32 px-4 mb-20 relative overflow-hidden rounded-b-[3rem] shadow-2xl">
-                {/* Decorative floating shapes */}
-                <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-[60px] opacity-40 translate-x-1/2 -translate-y-1/2 animate-blob"></div>
-                <div className="absolute bottom-0 left-10 w-64 h-64 bg-yellow-200 rounded-full mix-blend-multiply filter blur-[60px] opacity-60 animate-blob animation-delay-2000"></div>
-                
-                <div className="container mx-auto max-w-5xl text-center relative z-10">
-                    <span className="inline-block py-1.5 px-5 rounded-full bg-white text-blue-600 font-black mb-6 border-2 border-blue-100 shadow-md transform rotate-2">
-                        📰 Шинэ сонин
-                    </span>
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight mb-6 drop-shadow-sm">
-                        Мэдээ, <span className="text-blue-600 relative inline-block">Мэдээлэл
-                            <svg className="absolute -bottom-2 left-0 w-full h-4 text-blue-400 opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="6" fill="transparent"/>
-                            </svg>
-                        </span>
-                    </h1>
-                    <p className="text-xl md:text-2xl text-slate-800 max-w-2xl mx-auto font-medium">
-                        Цаг үеийн болон байгууллагын онцлох мэдээ, үйл явдлуудтай танилцаарай.
-                    </p>
-                </div>
+        <div className="min-h-screen bg-white font-sans pb-24 text-[#0F1B3D]">
+            {/* Navy Header Banner */}
+            <WaveHeader title="СҮҮЛИЙН ҮЕИЙН ШИНЭ СОНИН" subtitle="МҮЗХ-ны цаг үеийн үйл ажиллагаа болон зуслангийн салбарын онцлох мэдээллүүд." />
 
-                {/* Wavy bottom divider (optional, but adds to the theme) */}
-                <div className="absolute bottom-0 inset-x-0 h-12 bg-slate-50" style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 100%)'}}></div>
-            </div>
-
-            <div className="container mx-auto px-4 max-w-7xl relative z-20 -mt-10">
+            <div className="container mx-auto px-4 max-w-7xl relative z-20 pt-16">
                 {loading ? (
                     <div className="flex justify-center py-20">
-                        <div className="animate-spin rounded-full h-16 w-16 border-8 border-slate-200 border-b-yellow-400 border-r-blue-500"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-[#0F1B3D]"></div>
                     </div>
                 ) : posts.length > 0 ? (
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {posts.map((post, i) => (
                             <Link href={`/news/${post.slug || post.id}`} key={post.id} className="block group">
-                                <article className={`bg-white rounded-[2rem] border-4 border-slate-100 p-3 shadow-lg flex flex-col h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-yellow-300 ${i % 2 === 0 ? 'hover:-rotate-1' : 'hover:rotate-1'}`}>
-                                    {/* Image Container */}
-                                    <div className="aspect-[4/3] w-full rounded-[1.5rem] bg-slate-100 relative overflow-hidden flex items-center justify-center shrink-0 border-2 border-slate-50">
+                                <article className="bg-white rounded-3xl border border-slate-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
+                                    {/* Image */}
+                                    <div className="aspect-video w-full bg-slate-100 relative overflow-hidden shrink-0">
                                         {post.imageUrl ? (
-                                            <img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500" />
+                                            <img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-700" />
                                         ) : (
-                                            <div className="text-6xl group-hover:animate-bounce">📰</div>
+                                            <div className="w-full h-full flex items-center justify-center text-4xl bg-slate-100 grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">📰</div>
                                         )}
-                                        
-                                        {/* Floating Date Badge */}
-                                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur font-black text-slate-800 rounded-xl px-3 py-2 shadow-md border-2 border-slate-100 flex flex-col items-center justify-center leading-none text-center transform -rotate-3 group-hover:rotate-0 transition-transform">
-                                            <span className="text-blue-600 text-xl block mb-0.5">{new Date(post.createdAt).getDate()}</span>
-                                            <span className="text-[10px] uppercase tracking-wider">{new Date(post.createdAt).toLocaleString('mn-MN', { month: 'short' })}</span>
+                                        {/* Category Badge */}
+                                        <div className="absolute top-4 left-4">
+                                            <span className="bg-[#0F1B3D] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">Мэдээ</span>
                                         </div>
                                     </div>
 
                                     {/* Content */}
-                                    <div className="p-5 flex-1 flex flex-col pt-6">
-                                        <div className="inline-flex items-center gap-2 mb-4">
-                                            <span className="bg-blue-100 text-blue-700 text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">Мэдээ</span>
+                                    <div className="p-6 flex-1 flex flex-col">
+                                        <div className="text-xs font-bold text-[#D4A843] uppercase tracking-widest mb-3">
+                                            {new Date(post.createdAt).toLocaleDateString('mn-MN', { year: 'numeric', month: 'short', day: 'numeric' })}
                                         </div>
                                         
-                                        <h3 className="text-2xl font-black leading-tight text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-3 mb-3">
+                                        <h3 className="text-xl font-bold text-[#0F1B3D] group-hover:text-blue-600 transition-colors line-clamp-2 mb-3 leading-tight">
                                             {post.title}
                                         </h3>
                                         
-                                        <p className="text-slate-500 font-medium line-clamp-3 text-base flex-grow">
-                                            {post.excerpt || "Дэлгэрэнгүйг энд дарж орж үзнэ үү."}
+                                        <p className="text-slate-500 text-sm font-medium line-clamp-3 mb-6 flex-grow">
+                                            {post.excerpt || (post as any).content?.substring(0, 100).replace(/<[^>]+>/g, '') + '...'}
                                         </p>
 
-                                        {/* Author Footer */}
-                                        <div className="flex items-center space-x-3 text-sm text-slate-500 mt-6 pt-4 border-t-2 border-dashed border-slate-100 shrink-0">
-                                            <div className="w-8 h-8 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center font-black border-2 border-yellow-200">
-                                                {(post.author?.name || "А")[0]}
+                                        {/* Footer */}
+                                        <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-6 h-6 rounded-full bg-[#0F1B3D]/5 text-[#0F1B3D] flex items-center justify-center text-[10px] font-bold border border-[#0F1B3D]/10">
+                                                    {(post.author?.name || "А")[0]}
+                                                </div>
+                                                <span className="text-xs font-bold text-slate-600">{post.author?.name || "Админ"}</span>
                                             </div>
-                                            <div className="font-bold text-slate-700">{post.author?.name || "Админ"}</div>
+                                            <div className="text-[#0F1B3D] font-bold text-xs flex items-center gap-1 group-hover:gap-2 transition-all">
+                                                Унших <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7"/></svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </article>
@@ -130,9 +106,9 @@ export default function NewsPage() {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-32 bg-white rounded-[3rem] border-4 border-dashed border-slate-200 shadow-sm max-w-2xl mx-auto mt-12">
-                        <div className="text-7xl mb-6">📭</div>
-                        <h3 className="text-2xl font-black text-slate-900 mb-2">Одоогоор мэдээ алга байна</h3>
+                    <div className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-slate-200 shadow-sm max-w-2xl mx-auto mt-12">
+                        <div className="text-6xl mb-6">📭</div>
+                        <h3 className="text-2xl font-black text-[#0F1B3D] mb-2">Одоогоор мэдээ алга байна</h3>
                         <p className="text-slate-500 font-medium">Тун удахгүй шинэ мэдээллүүд нэмэгдэх болно.</p>
                     </div>
                 )}

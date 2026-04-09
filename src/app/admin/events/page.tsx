@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import ImageUpload from "@/components/ImageUpload";
 
 export default function AdminEvents() {
     const [events, setEvents] = useState<any[]>([]);
@@ -14,11 +15,13 @@ export default function AdminEvents() {
         title: "",
         description: "",
         content: "",
+        location: "",
         startDate: "",
         endDate: "",
         imageUrl: "",
         eventType: "CONFERENCE",
-        isOpen: true
+        isOpen: true,
+        isFeatured: false
     });
 
     async function fetchEvents() {
@@ -74,11 +77,13 @@ export default function AdminEvents() {
             title: eventItem.title || "",
             description: eventItem.description || "",
             content: eventItem.content || "",
+            location: eventItem.location || "",
             startDate: formattedDate,
             endDate: endFormattedDate,
             imageUrl: eventItem.imageUrl || "",
             eventType: eventItem.eventType || "CONFERENCE",
             isOpen: eventItem.isOpen !== undefined ? eventItem.isOpen : true,
+            isFeatured: eventItem.isFeatured || false,
         });
         setAdding(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -97,7 +102,7 @@ export default function AdminEvents() {
     const handleCancel = () => {
         setAdding(false);
         setEditingId(null);
-        setFormData({ title: "", description: "", content: "", startDate: "", endDate: "", imageUrl: "", eventType: "CONFERENCE", isOpen: true });
+        setFormData({ title: "", description: "", content: "", location: "", startDate: "", endDate: "", imageUrl: "", eventType: "CONFERENCE", isOpen: true, isFeatured: false });
     };
 
     return (
@@ -144,6 +149,16 @@ export default function AdminEvents() {
                                 </select>
                             </div>
                             <div className="space-y-2">
+                                <label className="text-sm font-medium">Байршил</label>
+                                <input
+                                    type="text"
+                                    value={formData.location}
+                                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                                    className="w-full border rounded-md px-3 py-2 text-sm"
+                                    placeholder="Жишээ: Улаанбаатар, Корпорэйт зочид буудал"
+                                />
+                            </div>
+                            <div className="space-y-2">
                                 <label className="text-sm font-medium">Эхлэх огноо *</label>
                                 <input
                                     required
@@ -163,13 +178,10 @@ export default function AdminEvents() {
                                 />
                             </div>
                             <div className="space-y-2 col-span-2">
-                                <label className="text-sm font-medium">Зураг (URL)</label>
-                                <input
-                                    type="text"
+                                <label className="text-sm font-medium">Зураг (Upload)</label>
+                                <ImageUpload
                                     value={formData.imageUrl}
-                                    onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                                    className="w-full border rounded-md px-3 py-2 text-sm"
-                                    placeholder="https://... эсвэл /images/event.jpg"
+                                    onChange={(url) => setFormData({ ...formData, imageUrl: url })}
                                 />
                             </div>
                             <div className="space-y-2 col-span-2 text-sm">
@@ -201,6 +213,18 @@ export default function AdminEvents() {
                                     Бүртгэл нээлттэй эсэх
                                 </label>
                             </div>
+                            <div className="col-span-2 flex items-center gap-2">
+                                <input
+                                    type="checkbox"
+                                    id="isFeatured"
+                                    checked={formData.isFeatured}
+                                    onChange={(e) => setFormData({ ...formData, isFeatured: e.target.checked })}
+                                    className="h-4 w-4 rounded border-gray-300 text-yellow-500 focus:ring-yellow-500"
+                                />
+                                <label htmlFor="isFeatured" className="text-sm font-medium leading-none flex items-center gap-1.5">
+                                    🌟 Онцлох арга хэмжээ болгох
+                                </label>
+                            </div>
                         </div>
                         <div className="pt-4 flex gap-2">
                             <button type="submit" className="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600">
@@ -222,6 +246,7 @@ export default function AdminEvents() {
                             <th className="px-4 py-3">Төрөл</th>
                             <th className="px-4 py-3">Огноо</th>
                             <th className="px-4 py-3">Бүртгэл</th>
+                            <th className="px-4 py-3">Онцлох</th>
                             <th className="px-4 py-3 text-right">Үйлдэл</th>
                         </tr>
                     </thead>
@@ -242,6 +267,9 @@ export default function AdminEvents() {
                                         <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${event.isOpen ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                                             {event.isOpen ? 'Нээлттэй' : 'Хаагдсан'}
                                         </span>
+                                    </td>
+                                    <td className="px-4 py-3 text-center">
+                                        {event.isFeatured && <span className="text-xl">🌟</span>}
                                     </td>
                                     <td className="px-4 py-3 text-right">
                                         <Link href={`/admin/events/${event.id}/registrations`} className="text-green-600 hover:text-green-800 text-sm font-medium mr-3">

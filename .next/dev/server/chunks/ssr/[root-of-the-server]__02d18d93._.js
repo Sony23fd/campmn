@@ -104,6 +104,8 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$c
 __turbopack_context__.s([
     "default",
     ()=>CampDetailPage,
+    "dynamic",
+    ()=>dynamic,
     "generateMetadata",
     ()=>generateMetadata
 ]);
@@ -137,6 +139,7 @@ async function generateMetadata({ params }) {
         description: camp.description?.substring(0, 160) || "Монголын Үндэсний Зуслангуудын Холбооны гишүүн зуслан"
     };
 }
+const dynamic = "force-dynamic";
 async function CampDetailPage({ params }) {
     const resolvedParams = await params;
     const camp = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].camp.findUnique({
@@ -160,7 +163,7 @@ async function CampDetailPage({ params }) {
                         className: "w-full h-full object-cover"
                     }, void 0, false, {
                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                        lineNumber: 40,
+                        lineNumber: 42,
                         columnNumber: 21
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-full h-full flex flex-col items-center justify-center text-slate-400 bg-slate-200",
@@ -177,12 +180,12 @@ async function CampDetailPage({ params }) {
                                     d: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L28 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 49,
                                     columnNumber: 122
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 47,
+                                lineNumber: 49,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -190,20 +193,20 @@ async function CampDetailPage({ params }) {
                                 children: "Зураг оруулаагүй байна"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 48,
+                                lineNumber: 50,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                        lineNumber: 46,
+                        lineNumber: 48,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 54,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -227,24 +230,24 @@ async function CampDetailPage({ params }) {
                                                 d: "M10 19l-7-7m0 0l7-7m-7 7h18"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 58,
+                                                lineNumber: 60,
                                                 columnNumber: 113
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                            lineNumber: 58,
+                                            lineNumber: 60,
                                             columnNumber: 29
                                         }, this),
                                         "Бүх зуслан руу буцах"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                    lineNumber: 57,
+                                    lineNumber: 59,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 56,
+                                lineNumber: 58,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -252,7 +255,7 @@ async function CampDetailPage({ params }) {
                                 children: camp.name
                             }, void 0, false, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 62,
+                                lineNumber: 64,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -274,7 +277,7 @@ async function CampDetailPage({ params }) {
                                                         d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 65,
+                                                        lineNumber: 67,
                                                         columnNumber: 122
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -284,20 +287,20 @@ async function CampDetailPage({ params }) {
                                                         d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 65,
+                                                        lineNumber: 67,
                                                         columnNumber: 278
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 65,
+                                                lineNumber: 67,
                                                 columnNumber: 29
                                             }, this),
                                             camp.location || "Байршил тодорхойгүй"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 66,
                                         columnNumber: 25
                                     }, this),
                                     camp.ageCategories && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -306,7 +309,7 @@ async function CampDetailPage({ params }) {
                                                 className: "w-1.5 h-1.5 rounded-full bg-white/50"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 70,
+                                                lineNumber: 72,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -324,12 +327,12 @@ async function CampDetailPage({ params }) {
                                                             d: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 72,
+                                                            lineNumber: 74,
                                                             columnNumber: 130
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 72,
+                                                        lineNumber: 74,
                                                         columnNumber: 37
                                                     }, this),
                                                     "Нас: ",
@@ -337,7 +340,7 @@ async function CampDetailPage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 71,
+                                                lineNumber: 73,
                                                 columnNumber: 33
                                             }, this)
                                         ]
@@ -348,7 +351,7 @@ async function CampDetailPage({ params }) {
                                                 className: "w-1.5 h-1.5 rounded-full bg-white/50"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 79,
+                                                lineNumber: 81,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -366,12 +369,12 @@ async function CampDetailPage({ params }) {
                                                             d: "M13 10V3L4 14h7v7l9-11h-7z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 81,
+                                                            lineNumber: 83,
                                                             columnNumber: 130
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 81,
+                                                        lineNumber: 83,
                                                         columnNumber: 37
                                                     }, this),
                                                     "Чиглэл: ",
@@ -379,7 +382,7 @@ async function CampDetailPage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 82,
                                                 columnNumber: 33
                                             }, this)
                                         ]
@@ -390,7 +393,7 @@ async function CampDetailPage({ params }) {
                                                 className: "w-1.5 h-1.5 rounded-full bg-white/50"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 90,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -408,12 +411,12 @@ async function CampDetailPage({ params }) {
                                                             d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 90,
+                                                            lineNumber: 92,
                                                             columnNumber: 130
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 92,
                                                         columnNumber: 37
                                                     }, this),
                                                     camp.establishedAt,
@@ -421,7 +424,7 @@ async function CampDetailPage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 91,
                                                 columnNumber: 33
                                             }, this)
                                         ]
@@ -432,7 +435,7 @@ async function CampDetailPage({ params }) {
                                                 className: "w-1.5 h-1.5 rounded-full bg-white/50"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 97,
+                                                lineNumber: 99,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -450,12 +453,12 @@ async function CampDetailPage({ params }) {
                                                             d: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 99,
+                                                            lineNumber: 101,
                                                             columnNumber: 130
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 99,
+                                                        lineNumber: 101,
                                                         columnNumber: 37
                                                     }, this),
                                                     "Нэг ээлжиндээ ",
@@ -464,7 +467,7 @@ async function CampDetailPage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 98,
+                                                lineNumber: 100,
                                                 columnNumber: 33
                                             }, this)
                                         ]
@@ -472,19 +475,19 @@ async function CampDetailPage({ params }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 63,
+                                lineNumber: 65,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                        lineNumber: 55,
+                        lineNumber: 57,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                lineNumber: 37,
+                lineNumber: 39,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -501,7 +504,7 @@ async function CampDetailPage({ params }) {
                                         children: "Зуслангийн Танилцуулга"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 116,
                                         columnNumber: 25
                                     }, this),
                                     camp.description ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -510,25 +513,25 @@ async function CampDetailPage({ params }) {
                                                 children: paragraph
                                             }, idx, false, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 120,
                                                 columnNumber: 37
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 118,
                                         columnNumber: 29
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-slate-500 italic",
                                         children: "Одоогоор дэлгэрэнгүй танилцуулга оруулаагүй байна."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 124,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 113,
+                                lineNumber: 115,
                                 columnNumber: 21
                             }, this),
                             Array.isArray(camp.shiftsData) && camp.shiftsData.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,7 +542,7 @@ async function CampDetailPage({ params }) {
                                         children: "Ээлжийн Хуваарь"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 131,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -556,7 +559,7 @@ async function CampDetailPage({ params }) {
                                                                 children: "Ээлжийн нэр"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 134,
+                                                                lineNumber: 136,
                                                                 columnNumber: 45
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -564,7 +567,7 @@ async function CampDetailPage({ params }) {
                                                                 children: "Хугацаа"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 135,
+                                                                lineNumber: 137,
                                                                 columnNumber: 45
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -572,18 +575,18 @@ async function CampDetailPage({ params }) {
                                                                 children: "Төлбөр"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 136,
+                                                                lineNumber: 138,
                                                                 columnNumber: 45
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 135,
                                                         columnNumber: 41
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                    lineNumber: 132,
+                                                    lineNumber: 134,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -596,7 +599,7 @@ async function CampDetailPage({ params }) {
                                                                     children: shift.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                    lineNumber: 142,
+                                                                    lineNumber: 144,
                                                                     columnNumber: 49
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -604,7 +607,7 @@ async function CampDetailPage({ params }) {
                                                                     children: shift.date
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                    lineNumber: 143,
+                                                                    lineNumber: 145,
                                                                     columnNumber: 49
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -612,55 +615,55 @@ async function CampDetailPage({ params }) {
                                                                     children: shift.price
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                    lineNumber: 144,
+                                                                    lineNumber: 146,
                                                                     columnNumber: 49
                                                                 }, this)
                                                             ]
                                                         }, idx, true, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 141,
+                                                            lineNumber: 143,
                                                             columnNumber: 45
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 141,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                            lineNumber: 131,
+                                            lineNumber: 133,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 132,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 128,
+                                lineNumber: 130,
                                 columnNumber: 25
                             }, this),
                             Array.isArray(camp.groupsData) && camp.groupsData.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$GroupsAccordion$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                 groups: camp.groupsData
                             }, void 0, false, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 155,
+                                lineNumber: 157,
                                 columnNumber: 25
                             }, this),
                             Array.isArray(camp.programsData) && camp.programsData.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProgramsAccordion$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                 programs: camp.programsData
                             }, void 0, false, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 160,
+                                lineNumber: 162,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                        lineNumber: 112,
+                        lineNumber: 114,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -674,7 +677,7 @@ async function CampDetailPage({ params }) {
                                         children: "Холбоо Барих"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 167,
+                                        lineNumber: 169,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -697,17 +700,17 @@ async function CampDetailPage({ params }) {
                                                                 d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 171,
+                                                                lineNumber: 173,
                                                                 columnNumber: 116
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 171,
+                                                            lineNumber: 173,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 170,
+                                                        lineNumber: 172,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -717,7 +720,7 @@ async function CampDetailPage({ params }) {
                                                                 children: "Утас"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 174,
+                                                                lineNumber: 176,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -725,19 +728,19 @@ async function CampDetailPage({ params }) {
                                                                 children: camp.contactPhone || "-"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 175,
+                                                                lineNumber: 177,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 173,
+                                                        lineNumber: 175,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 171,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -757,17 +760,17 @@ async function CampDetailPage({ params }) {
                                                                 d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 180,
+                                                                lineNumber: 182,
                                                                 columnNumber: 116
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 180,
+                                                            lineNumber: 182,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 179,
+                                                        lineNumber: 181,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -777,7 +780,7 @@ async function CampDetailPage({ params }) {
                                                                 children: "И-мэйл"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 183,
+                                                                lineNumber: 185,
                                                                 columnNumber: 37
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -785,19 +788,19 @@ async function CampDetailPage({ params }) {
                                                                 children: camp.contactEmail || "-"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 184,
+                                                                lineNumber: 186,
                                                                 columnNumber: 37
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 182,
+                                                        lineNumber: 184,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 178,
+                                                lineNumber: 180,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -817,17 +820,17 @@ async function CampDetailPage({ params }) {
                                                                 d: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 189,
+                                                                lineNumber: 191,
                                                                 columnNumber: 116
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                            lineNumber: 189,
+                                                            lineNumber: 191,
                                                             columnNumber: 37
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 188,
+                                                        lineNumber: 190,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -837,7 +840,7 @@ async function CampDetailPage({ params }) {
                                                                 children: "Вэб эсвэл FB"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 192,
+                                                                lineNumber: 194,
                                                                 columnNumber: 37
                                                             }, this),
                                                             camp.website ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -848,38 +851,38 @@ async function CampDetailPage({ params }) {
                                                                 children: camp.website
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 194,
+                                                                lineNumber: 196,
                                                                 columnNumber: 41
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-slate-900 font-medium",
                                                                 children: "-"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                                lineNumber: 198,
+                                                                lineNumber: 200,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                        lineNumber: 191,
+                                                        lineNumber: 193,
                                                         columnNumber: 33
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                                lineNumber: 187,
+                                                lineNumber: 189,
                                                 columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 170,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 166,
+                                lineNumber: 168,
                                 columnNumber: 21
                             }, this),
                             camp.locationMapUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -890,7 +893,7 @@ async function CampDetailPage({ params }) {
                                         children: "Байршил"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 208,
+                                        lineNumber: 210,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -900,31 +903,31 @@ async function CampDetailPage({ params }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 211,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                                lineNumber: 207,
+                                lineNumber: 209,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/camps/[id]/page.tsx",
-                        lineNumber: 165,
+                        lineNumber: 167,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/camps/[id]/page.tsx",
-                lineNumber: 109,
+                lineNumber: 111,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/camps/[id]/page.tsx",
-        lineNumber: 35,
+        lineNumber: 37,
         columnNumber: 9
     }, this);
 }

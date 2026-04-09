@@ -61,6 +61,7 @@ export async function POST(request: Request) {
                 imageUrl: body.imageUrl,
                 eventType: body.eventType,
                 isOpen: body.isOpen ?? true,
+                isFeatured: body.isFeatured ?? false,
             },
         });
 

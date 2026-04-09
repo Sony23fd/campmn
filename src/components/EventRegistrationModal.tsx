@@ -62,12 +62,13 @@ export default function EventRegistrationModal({ isOpen, onClose, eventId, event
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={resetFormAndClose}></div>
-            <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 overflow-y-auto bg-slate-900/60 backdrop-blur-sm py-10 sm:py-4" onClick={(e) => {
+            if (e.target === e.currentTarget) resetFormAndClose();
+        }}>
+            <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-auto">
                 
                 {/* Header */}
-                <div className="bg-slate-50 border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                <div className="bg-slate-50 border-b border-slate-100 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
                     <div>
                         <h3 className="text-lg font-bold text-slate-900">Бүртгүүлэх</h3>
                         <p className="text-sm text-slate-500 line-clamp-1">{eventTitle}</p>
@@ -78,7 +79,7 @@ export default function EventRegistrationModal({ isOpen, onClose, eventId, event
                 </div>
 
                 {/* Body */}
-                <div className="p-6">
+                <div className="p-6 max-h-[calc(100vh-200px)] overflow-y-auto">
                     {success ? (
                         <div className="text-center py-8">
                             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-6">

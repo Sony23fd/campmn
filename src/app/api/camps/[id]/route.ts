@@ -23,6 +23,7 @@ export async function PUT(request: Request, context: { params: Promise<{ id: str
                 shiftsData: data.shiftsData,
                 programsData: data.programsData,
                 groupsData: data.groupsData,
+                badge: data.badge,
                 isActive: data.isActive !== undefined ? data.isActive : true,
             },
         });

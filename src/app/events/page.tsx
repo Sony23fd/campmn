@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import EventRegistrationModal from "@/components/EventRegistrationModal";
+import Link from "next/link";
+import WaveHeader from "@/components/WaveHeader";
 
 interface Event {
     id: string;
@@ -14,13 +16,12 @@ interface Event {
     eventType: string;
     isOpen: boolean;
 }
+
 const demoEvents: Event[] = [
     { id: "1", title: "Олон Улсын Зуслангийн Эрдэмтэн Судлаачдын 3-р Хурал", description: "Ази Номхон Далайн орнуудын болон бусад олон улсын судлаачид оролцох.", startDate: "2024-10-15T00:00:00Z", location: "Улаанбаатар хот", eventType: "CONFERENCE", isOpen: true },
     { id: "2", title: "Артек ОУХТ Солилцооны Хөтөлбөр 2024", description: "ОХУ-ын Артек зусланд амрах хүүхдүүдийн бүртгэл.", startDate: "2024-06-01T00:00:00Z", location: "ОХУ, Гурзуф", eventType: "EXCHANGE_PROGRAM", isOpen: true },
     { id: "3", title: "Зуслангийн Удирдлагын Нэгдсэн Сургалт", description: "Зуслангуудын удирдлага, менежерүүдэд зориулсан чадавхжуулах сургалт.", startDate: "2024-05-10T00:00:00Z", location: "Цонжин болдог", eventType: "TRAINING", isOpen: false },
 ];
-
-import Link from "next/link";
 
 export default function EventsPage() {
     const [events, setEvents] = useState<Event[]>([]);
@@ -46,6 +47,7 @@ export default function EventsPage() {
                 }
             } catch (error) {
                 console.error("Failed to load events", error);
+                setEvents(demoEvents);
             } finally {
                 setLoading(false);
             }
@@ -54,72 +56,73 @@ export default function EventsPage() {
         fetchEvents();
     }, []);
 
-    const formatDateRange = (start: string, end?: string) => {
-        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
-        const startDateString = new Date(start).toLocaleDateString('mn-MN', options);
-        if (end) {
-            const endDateString = new Date(end).toLocaleDateString('mn-MN', options);
-            if (startDateString !== endDateString) return `${startDateString} - ${endDateString}`;
-        }
-        return startDateString;
+    const parseDateInfo = (dateStr: string) => {
+        const date = new Date(dateStr);
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return { month, day };
     };
 
-    const getTypeLabel = (type: string) => {
-        switch (type) {
-            case 'CONFERENCE': return 'Хурал, зөвлөгөөн';
-            case 'EXCHANGE_PROGRAM': return 'Солилцооны хөтөлбөр';
-            case 'TRAINING': return 'Сургалт';
-            default: return 'Бусад';
-        }
-    };
+    // Separate featured event
+    const featuredEvent = (events as any[]).find(e => e.isFeatured) || events[0];
+    const secondaryEvents = events.filter(e => e.id !== (featuredEvent?.id)).slice(0, 2);
+    const otherEvents = events.filter(e => e.id !== (featuredEvent?.id) && !secondaryEvents.find(se => se.id === e.id));
 
     return (
-        <div className="min-h-screen bg-slate-50 selection:bg-yellow-300 pb-24 font-sans">
-            {/* Playful Header Section */}
-            <div className="bg-blue-600 pt-24 pb-32 px-4 mb-20 relative overflow-hidden rounded-b-[3rem] shadow-2xl">
-                {/* Decorative floating shapes */}
-                <div className="absolute top-10 right-10 w-64 h-64 bg-yellow-400 rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob"></div>
-                <div className="absolute bottom-10 left-10 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-[80px] opacity-60 animate-blob animation-delay-2000"></div>
-                
-                <div className="container mx-auto max-w-5xl text-center relative z-10">
-                    <span className="inline-block py-1.5 px-4 rounded-full bg-yellow-400 text-slate-900 font-black mb-6 border-2 border-yellow-300 shadow-md transform rotate-2">
-                        🎉 Арга хэмжээ
-                    </span>
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6 drop-shadow-md">
-                        Хөтөлбөр, <span className="text-yellow-300 relative inline-block">Арга хэмжээ
-                            <svg className="absolute -bottom-2 left-0 w-full h-4 text-yellow-500 opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="6" fill="transparent"/>
-                            </svg>
-                        </span>
-                    </h1>
-                    <p className="text-xl md:text-2xl text-blue-100 max-w-2xl mx-auto font-medium">
-                        Олон улсын болон үндэсний хэмжээний арга хэмжээ, хурал, солилцооны хөтөлбөрийн мэдээлэл.
-                    </p>
-                </div>
-            </div>
+        <div className="min-h-screen bg-white font-sans pb-32 text-[#0F1B3D]">
+            {/* Navy Header Banner */}
+            <WaveHeader title="АРГА ХЭМЖЭЭ" subtitle="Олон улсын болон үндэсний хэмжээний арга хэмжээ, хурал, солилцооны хөтөлбөрийн мэдээлэл." />
 
-            <div className="container mx-auto px-4 max-w-7xl relative z-20 -mt-36">
+            <div className="container mx-auto px-4 max-w-7xl relative z-20 pt-16">
                 {loading ? (
                     <div className="flex justify-center py-20">
-                        <div className="w-16 h-16 rounded-full border-8 border-slate-200 border-t-yellow-400 animate-spin"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-[#0F1B3D]"></div>
                     </div>
                 ) : events.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {events.map((event, i) => (
-                            <EventCard 
-                                key={event.id} 
-                                event={event} 
-                                formatDateRange={formatDateRange}
-                                getTypeLabel={getTypeLabel}
-                                openModal={openModal}
-                                index={i}
-                            />
-                        ))}
+                    <div className="space-y-12">
+                        {/* FEATURED GRID (1 LARGE + 2 SMALL) */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            {/* Large Featured Card */}
+                            {featuredEvent && (
+                                <div className="lg:col-span-7 xl:col-span-7">
+                                    <FeaturedEventCard 
+                                        event={featuredEvent} 
+                                        openModal={openModal} 
+                                        parseDateInfo={parseDateInfo}
+                                    />
+                                </div>
+                            )}
+
+                            {/* Secondary Horizontal Cards */}
+                            <div className="lg:col-span-12 lg:hidden"></div> {/* Spacer for mobile */}
+                            <div className="lg:col-span-5 xl:col-span-5 flex flex-col gap-6">
+                                {secondaryEvents.map(event => (
+                                    <SecondaryEventCard 
+                                        key={event.id} 
+                                        event={event} 
+                                        openModal={openModal} 
+                                        parseDateInfo={parseDateInfo}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* REMAINDER GRID */}
+                        {otherEvents.length > 0 && (
+                            <div className="pt-12 border-t border-slate-100">
+                                <h3 className="text-xl font-black mb-8 border-l-4 border-[#D4A843] pl-4 uppercase tracking-tight">Бусад арга хэмжээнүүд</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {otherEvents.map((event) => (
+                                        <EventCard key={event.id} event={event} openModal={openModal} />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ) : (
-                    <div className="text-center py-24 bg-white rounded-[3rem] border-4 border-slate-100 border-dashed shadow-sm max-w-2xl mx-auto mt-20">
-                        <div className="text-7xl mb-6 animate-bounce">📅</div>
-                        <h3 className="text-2xl font-black text-slate-900 mb-3">Одоогоор зарлагдсан арга хэмжээ алга байна</h3>
+                    <div className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-slate-200 shadow-sm max-w-2xl mx-auto mt-20">
+                        <div className="text-7xl mb-6">📅</div>
+                        <h3 className="text-2xl font-black text-[#0F1B3D] mb-3">Одоогоор зарлагдсан арга хэмжээ алга байна</h3>
                         <p className="text-slate-500 max-w-md mx-auto font-medium text-lg">Тун удахгүй шинэ арга хэмжээнүүд нэмэгдэх болно.</p>
                     </div>
                 )}
@@ -136,71 +139,125 @@ export default function EventsPage() {
     );
 }
 
-function EventCard({ event, formatDateRange, getTypeLabel, openModal, index }: { 
-    event: Event; 
-    formatDateRange: (start: string, end?: string) => string; 
-    getTypeLabel: (type: string) => string;
-    openModal: (id: string, title: string) => void;
-    index: number;
-}) {
+function FeaturedEventCard({ event, openModal, parseDateInfo }: any) {
+    const { month, day } = parseDateInfo(event.startDate);
+    
     return (
-        <div className={`group bg-white rounded-[2rem] border-2 border-slate-100 shadow-lg flex flex-col overflow-hidden h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-300 ${index % 2 === 0 ? 'hover:rotate-1' : 'hover:-rotate-1'}`}>
-            {/* Image Placeholder or Actual Image */}
-            <div className={`aspect-[4/3] w-full relative bg-slate-200 shrink-0 m-2 rounded-[1.5rem] overflow-hidden ${!event.imageUrl && 'flex items-center justify-center'}`} style={{ width: 'calc(100% - 16px)' }}>
+        <div className="group bg-white rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] overflow-hidden h-full flex flex-col transition-all duration-500 hover:shadow-xl">
+            {/* Image Container */}
+            <div className="relative aspect-[16/8] overflow-hidden">
                 {event.imageUrl ? (
-                    <img src={event.imageUrl} alt={event.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={event.imageUrl} alt={event.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 ) : (
-                    <div className="text-6xl bg-slate-100 w-full h-full flex items-center justify-center">🎟️</div>
+                    <div className="w-full h-full bg-slate-100 flex items-center justify-center text-7xl opacity-20">🎫</div>
                 )}
                 
-                {/* Badges */}
-                <div className="absolute top-3 left-3 flex flex-col space-y-2">
-                    <span className="bg-yellow-400 text-slate-900 text-[10px] font-black uppercase px-2.5 py-1.5 rounded-xl shadow-md border-2 border-yellow-300">
-                        {getTypeLabel(event.eventType)}
-                    </span>
-                </div>
-                <div className="absolute top-3 right-3">
-                    {event.isOpen ? (
-                        <span className="bg-green-400 text-slate-900 text-[10px] font-black uppercase px-2.5 py-1.5 rounded-xl shadow-md border-2 border-green-300">
-                            Нээлттэй
-                        </span>
-                    ) : (
-                        <span className="bg-slate-300 text-slate-600 text-[10px] font-black uppercase px-2.5 py-1.5 rounded-xl shadow-md border-2 border-slate-200">
-                            Хаагдсан
-                        </span>
-                    )}
+                {/* Gold Date Circle */}
+                <div className="absolute top-4 right-4 w-16 h-16 bg-[#D4A843] rounded-full flex flex-col items-center justify-center text-white shadow-xl z-20 border-2 border-white">
+                    <span className="text-[12px] font-black leading-none">{month}</span>
+                    <span className="text-[8px] font-bold uppercase tracking-widest mb-0.5">Сарын</span>
+                    <span className="text-[12px] font-black leading-none">{day}</span>
                 </div>
             </div>
 
             <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-2xl font-black mb-3 line-clamp-2 leading-tight text-slate-900 group-hover:text-blue-600 transition-colors">{event.title}</h3>
-                
-                <p className="text-sm font-medium text-slate-500 flex-grow mb-6 line-clamp-3">
+                <div className="text-[#D4A843] text-[10px] font-black uppercase tracking-[0.2em] mb-3">Онцлох арга хэмжээ</div>
+                <h2 className="text-xl md:text-2xl font-black text-[#0F1B3D] leading-tight mb-3 group-hover:text-blue-600 transition-colors">
+                    {event.title}
+                </h2>
+                <p className="text-slate-500 text-sm font-medium mb-6 line-clamp-2 leading-relaxed">
                     {event.description}
                 </p>
-                
-                <div className="space-y-3 shrink-0 bg-slate-50 rounded-[1.5rem] p-4 mb-6">
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                        </div>
-                        <span className="font-bold text-sm text-slate-700">{formatDateRange(event.startDate, event.endDate)}</span>
-                    </div>
-                </div>
-                
-                <div className="mt-auto flex gap-3 shrink-0">
-                    <button
+                <div className="mt-auto flex items-center justify-between">
+                    <button 
                         disabled={!event.isOpen}
                         onClick={() => openModal(event.id, event.title)}
-                        className="flex-1 inline-flex h-12 items-center justify-center rounded-2xl bg-blue-600 px-4 py-2 text-sm font-black text-white transition-all hover:bg-blue-700 hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none disabled:bg-slate-300 disabled:text-slate-500 disabled:shadow-none shadow-blue-500/30"
+                        className="bg-[#0F1B3D] text-white px-6 h-10 rounded-full font-black text-[10px] hover:bg-blue-600 transition-all hover:shadow-lg disabled:opacity-50"
                     >
                         Бүртгүүлэх
                     </button>
-                    <Link href={`/events/${event.id}`} className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-slate-200 text-slate-500 hover:bg-blue-50 focus:ring-4 focus:ring-blue-100 transition-colors">
-                        <span className="text-xl">➔</span>
+                    <Link href={`/events/${event.id}`} className="flex items-center gap-2 text-[#0F1B3D] font-black text-[10px] group/link">
+                        Дэлгэрэнгүй 
+                        <span className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center transition-all group-hover/link:bg-slate-50 group-hover/link:translate-x-1">
+                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7"/></svg>
+                        </span>
                     </Link>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function SecondaryEventCard({ event, openModal, parseDateInfo }: any) {
+    const { month, day } = parseDateInfo(event.startDate);
+
+    return (
+        <div className="group bg-white rounded-3xl border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col sm:flex-row transition-all duration-300 hover:shadow-xl h-full sm:h-[180px]">
+            {/* Image Thumbnail */}
+            <div className="w-full sm:w-1/3 relative overflow-hidden bg-slate-50 flex-shrink-0">
+                {event.imageUrl ? (
+                    <img src={event.imageUrl} alt={event.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center text-4xl opacity-20">📅</div>
+                )}
+                
+                {/* Smaller Date Circle */}
+                <div className="absolute top-2 right-2 w-12 h-12 bg-[#D4A843] rounded-full flex flex-col items-center justify-center text-white shadow-md border-2 border-white z-20">
+                    <span className="text-[10px] font-black leading-none">{month}</span>
+                    <span className="text-[6px] font-bold uppercase tracking-[0.05em]">{day}</span>
+                </div>
+            </div>
+
+            <div className="p-5 flex flex-col flex-1 min-w-0">
+                <h3 className="text-md font-black text-[#0F1B3D] leading-tight mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                    {event.title}
+                </h3>
+                <p className="text-[12px] text-slate-500 line-clamp-2 font-medium mb-3">
+                    {event.description}
+                </p>
+                <div className="mt-auto flex items-center justify-between">
+                    <button 
+                        disabled={!event.isOpen}
+                        onClick={() => openModal(event.id, event.title)}
+                        className="bg-[#0F1B3D] text-white px-4 h-8 rounded-full font-black text-[10px] hover:bg-blue-600 transition-colors disabled:opacity-50"
+                    >
+                        Бүртгүүлэх
+                    </button>
+                    <Link href={`/events/${event.id}`} className="text-[#0F1B3D] font-black text-[10px] flex items-center gap-1.5 group/link">
+                        Дэлгэрэнгүй
+                        <svg className="w-3 h-3 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7"/></svg>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function EventCard({ event, openModal }: any) {
+    return (
+        <div className="group bg-white rounded-3xl border border-slate-100 shadow-sm flex flex-col overflow-hidden h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+             <div className="aspect-[16/10] relative overflow-hidden bg-slate-50">
+                {event.imageUrl ? (
+                    <img src={event.imageUrl} alt={event.title} className="w-full h-full object-cover" />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center text-5xl opacity-10">📅</div>
+                )}
+             </div>
+             <div className="p-6 flex flex-col flex-1">
+                <h4 className="font-black text-[#0F1B3D] mb-2 line-clamp-1">{event.title}</h4>
+                <p className="text-xs text-slate-500 mb-6 line-clamp-2">{event.description}</p>
+                <div className="mt-auto flex items-center justify-between">
+                    <button 
+                        onClick={() => openModal(event.id, event.title)}
+                        className="text-[11px] font-black text-blue-600 uppercase tracking-widest hover:text-blue-800"
+                    >
+                        Бүртгүүлэх
+                    </button>
+                    <Link href={`/events/${event.id}`} className="w-8 h-8 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7"/></svg>
+                    </Link>
+                </div>
+             </div>
         </div>
     );
 }

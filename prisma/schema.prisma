@@ -46,6 +46,8 @@ model Camp {
   shiftsData    Json?    // Ээлжүүдийн мэдээлэл (Json array)
   programsData  Json?    // Хөтөлбөрүүдийн мэдээлэл (Json array)
   groupsData    Json?    // Бүлгүүдийн танилцуулга (Json array)
+  
+  badge         String?  // Топ, Онцлох гэх мэт
 
   isActive      Boolean  @default(true)
   createdAt     DateTime @default(now())
@@ -77,6 +79,8 @@ enum PostType {
   NEWS
   ANNIVERSARY_100
   BOARD_MEMBER // Удирдах болон хяналтын зөвлөлийн гишүүд
+  RESEARCH     // Эрдэм шинжилгээ (100 жил хуудсанд)
+  RECOMMENDATION // Зөвлөмж
 }
 
 // Арга хэмжээ, олон улсын хурлууд болон солилцооны хөтөлбөрүүд
@@ -93,6 +97,7 @@ model Event {
   eventType   EventType // Хурал, сургалт эсвэл солилцооны хөтөлбөр
   
   isOpen      Boolean  @default(true) // Бүртгэл нээлттэй эсэх
+  isFeatured  Boolean  @default(false) // Онцлох арга хэмжээ эсэх
   
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -165,4 +170,74 @@ model Partner {
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// ===========================
+// ШИНЭЭР НЭМЭГДСЭН МОДЕЛУУД
+// ===========================
+
+// Хууль тогтоомжийн PDF болон бусад баримт бичгүүд
+model Document {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  fileUrl     String   @db.Text
+  documentType String  @default("LEGISLATION")
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Түгээмэл асуултууд / FAQs (Зөвлөмж хуудас)
+model Faq {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  category    String   @default("Ерөнхий")
+  question    String
+  answer      String   @db.Text
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Үйл ажиллагааны үндсэн 2 эсвэл түүнээс дээш чиглэл (Динамик цэс)
+model ActivityCategory {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  slug        String   @unique
+  description String?  @db.Text
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  items       ActivityItem[]
+}
+
+// Үйл ажиллагааны дэд нийтлэлүүд (Дэлгэрэнгүй хуудас)
+model ActivityItem {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  categoryId  String   @db.Uuid
+  category    ActivityCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  
+  title       String
+  slug        String   @unique
+  content     String   @db.Text
+  imageUrl    String?
+  order       Int      @default(0)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 100 Жилийн түүхэн замнал
+model TimelineEvent {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  year        String   // 1926, 1950s
+  title       String
+  description String?  @db.Text
+  imageUrl    String?
+  videoUrl    String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

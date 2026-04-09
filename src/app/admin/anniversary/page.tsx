@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import ImageUpload from "@/components/ImageUpload";
 
 export default function AdminAnniversaryPage() {
     // ---- SETTINGS STATE ----
@@ -14,6 +15,10 @@ export default function AdminAnniversaryPage() {
         anniversary_intro_title: "Үйл ажиллагаа ба Хөтөлбөрүүд",
         anniversary_intro_text: "Ойн баярын хүрээнд зохион байгуулагдах албан ёсны хөтөлбөрүүд болон уулзалтууд.",
         anniversary_accordions: "[]",
+        anniversary_greeting_image: "",
+        anniversary_greeting_name: "Б. Болд",
+        anniversary_greeting_role: "Удирдах Зөвлөлийн Дарга",
+        anniversary_greeting_text: "Монгол улсад зуслангийн салбар үүсэж хөгжсөний 100 жилийн ойн баярын мэндийг нийт салбарын хамт олон, хүүхэд багачууд та бүхэндээ хүргэе.",
     });
     const [loadingSettings, setLoadingSettings] = useState(true);
     const [savingSettings, setSavingSettings] = useState(false);
@@ -135,12 +140,14 @@ export default function AdminAnniversaryPage() {
 
     // ---- POSTS HANDLERS ----
     const generateSlug = (text: string) => {
-        return text.toString().toLowerCase()
+        const slug = text.toString().toLowerCase()
             .replace(/\s+/g, '-')
-            .replace(/[^\w\-]+/g, '')
+            .replace(/[^\w\-\u0400-\u04FF]+/g, '')
             .replace(/\-\-+/g, '-')
             .replace(/^-+/, '')
             .replace(/-+$/, '');
+        
+        return slug || `post-${Date.now()}`;
     };
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -242,14 +249,10 @@ export default function AdminAnniversaryPage() {
                 
                 <div className="px-6 space-y-4">
                     <div className="space-y-2">
-                        <label className="text-sm font-medium leading-none">Логоны Линк (Зурагны холбоос)</label>
-                        <input
-                            type="text"
-                            name="anniversary_logo_url"
-                            value={settings.anniversary_logo_url}
-                            onChange={handleSettingsChange}
-                            className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-                            placeholder="/100-logo.jpg эсвэл https://..."
+                        <label className="text-sm font-medium leading-none">Логоны Линк (Upload)</label>
+                        <ImageUpload
+                            value={settings.anniversary_logo_url || ""}
+                            onChange={(url) => setSettings({ ...settings, anniversary_logo_url: url })}
                         />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -283,6 +286,54 @@ export default function AdminAnniversaryPage() {
                             rows={3}
                             className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                         />
+                    </div>
+
+                    {/* Greeting Settings */}
+                    <div className="pt-4 border-t mt-6 space-y-4">
+                        <div className="flex items-center justify-between mb-2">
+                            <h3 className="text-lg font-medium text-slate-800">Мэндчилгээ Хэсэг (Greeting)</h3>
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium leading-none">Мэндчилгээний Зураг (Захирал/Тэргүүн)</label>
+                            <ImageUpload
+                                value={settings.anniversary_greeting_image || ""}
+                                onChange={(url) => setSettings({ ...settings, anniversary_greeting_image: url })}
+                            />
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium leading-none">Овог, Нэр</label>
+                                <input
+                                    type="text"
+                                    name="anniversary_greeting_name"
+                                    value={settings.anniversary_greeting_name}
+                                    onChange={handleSettingsChange}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                    placeholder="Жишээ: Б. Болд"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium leading-none">Албан Тушаал</label>
+                                <input
+                                    type="text"
+                                    name="anniversary_greeting_role"
+                                    value={settings.anniversary_greeting_role}
+                                    onChange={handleSettingsChange}
+                                    className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                                    placeholder="Жишээ: МҮЗХ-ны Тэргүүн"
+                                />
+                            </div>
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium leading-none">Мэндчилгээний Үг</label>
+                            <textarea
+                                name="anniversary_greeting_text"
+                                value={settings.anniversary_greeting_text}
+                                onChange={handleSettingsChange}
+                                rows={5}
+                                className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                            />
+                        </div>
                     </div>
 
                     <div className="space-y-2 pt-4 border-t border-slate-100">
@@ -432,13 +483,10 @@ export default function AdminAnniversaryPage() {
                                     />
                                 </div>
                                 <div className="space-y-2 col-span-2 md:col-span-1">
-                                    <label className="text-sm font-medium">Зураг (URL)</label>
-                                    <input
-                                        type="text"
+                                    <label className="text-sm font-medium">Зураг (URL/Upload)</label>
+                                    <ImageUpload
                                         value={formData.imageUrl}
-                                        onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                                        className="w-full border rounded-md px-3 py-2 text-sm"
-                                        placeholder="Зургийн линк оруулна уу"
+                                        onChange={(url) => setFormData({ ...formData, imageUrl: url })}
                                     />
                                 </div>
                                 <div className="space-y-2 col-span-2 md:col-span-1">

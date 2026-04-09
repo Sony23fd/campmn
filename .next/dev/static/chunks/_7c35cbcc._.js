@@ -263,13 +263,39 @@ function PartnersAdminPage() {
                                             lineNumber: 190,
                                             columnNumber: 29
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                             required: true,
                                             value: type,
                                             onChange: (e)=>setType(e.target.value),
                                             className: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm",
-                                            placeholder: "Жишээ нь: Олон Улсын Байгууллага"
-                                        }, void 0, false, {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: "",
+                                                    disabled: true,
+                                                    children: "Сонгох..."
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/admin/partners/page.tsx",
+                                                    lineNumber: 197,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: "NATIONAL",
+                                                    children: "Үндэсний хэмжээнд"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/admin/partners/page.tsx",
+                                                    lineNumber: 198,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: "INTERNATIONAL",
+                                                    children: "Олон улсын түвшний"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/admin/partners/page.tsx",
+                                                    lineNumber: 199,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
                                             lineNumber: 191,
                                             columnNumber: 29
@@ -288,7 +314,7 @@ function PartnersAdminPage() {
                                             children: "Логоны зураг оруулах *"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 200,
+                                            lineNumber: 203,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -298,7 +324,7 @@ function PartnersAdminPage() {
                                             className: "flex w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm file:mr-4 file:rounded-md file:border-0 file:bg-slate-100 file:px-4 file:py-2 file:text-sm file:font-semibold hover:file:bg-slate-200 cursor-pointer"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 204,
                                             columnNumber: 29
                                         }, this),
                                         logo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -309,12 +335,12 @@ function PartnersAdminPage() {
                                                 className: "h-16 object-contain"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                lineNumber: 210,
+                                                lineNumber: 213,
                                                 columnNumber: 37
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 208,
+                                            lineNumber: 211,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -322,7 +348,7 @@ function PartnersAdminPage() {
                                             children: "Эсвэл интернэт дэх линкийг шууд хуулж тавьж болно:"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 213,
+                                            lineNumber: 216,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -332,13 +358,13 @@ function PartnersAdminPage() {
                                             placeholder: "https://.../logo.png"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 214,
+                                            lineNumber: 217,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/admin/partners/page.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 202,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -351,7 +377,7 @@ function PartnersAdminPage() {
                                             children: saving ? "Хадгалж байна..." : editingId ? "Шинэчлэх" : "Нэмэх"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 222,
+                                            lineNumber: 225,
                                             columnNumber: 29
                                         }, this),
                                         editingId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -361,13 +387,13 @@ function PartnersAdminPage() {
                                             children: "Цуцлах"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 230,
+                                            lineNumber: 233,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/admin/partners/page.tsx",
-                                    lineNumber: 221,
+                                    lineNumber: 224,
                                     columnNumber: 25
                                 }, this)
                             ]
@@ -397,7 +423,7 @@ function PartnersAdminPage() {
                                                     children: "Лого"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                    lineNumber: 247,
+                                                    lineNumber: 250,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -405,7 +431,7 @@ function PartnersAdminPage() {
                                                     children: "Нэр & Төрөл"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                    lineNumber: 248,
+                                                    lineNumber: 251,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -413,18 +439,18 @@ function PartnersAdminPage() {
                                                     children: "Үйлдэл"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                    lineNumber: 249,
+                                                    lineNumber: 252,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 246,
+                                            lineNumber: 249,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/admin/partners/page.tsx",
-                                        lineNumber: 245,
+                                        lineNumber: 248,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -436,12 +462,12 @@ function PartnersAdminPage() {
                                                 children: "Мэдээлэл олдсонгүй"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                lineNumber: 255,
+                                                lineNumber: 258,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                            lineNumber: 254,
+                                            lineNumber: 257,
                                             columnNumber: 37
                                         }, this) : partners.map((partner)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                 className: "hover:bg-slate-50",
@@ -456,24 +482,24 @@ function PartnersAdminPage() {
                                                                 className: "max-w-full max-h-full object-contain"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                                lineNumber: 266,
+                                                                lineNumber: 269,
                                                                 columnNumber: 57
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                            lineNumber: 264,
+                                                            lineNumber: 267,
                                                             columnNumber: 53
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "w-24 h-10 bg-slate-100 rounded border flex items-center justify-center text-xs text-slate-400",
                                                             children: "Зураггүй"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                            lineNumber: 269,
+                                                            lineNumber: 272,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                        lineNumber: 262,
+                                                        lineNumber: 265,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -484,21 +510,21 @@ function PartnersAdminPage() {
                                                                 children: partner.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                                lineNumber: 275,
+                                                                lineNumber: 278,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-xs text-slate-500",
-                                                                children: partner.type
+                                                                className: "text-xs font-semibold px-2 py-0.5 rounded-full inline-block mt-1 bg-slate-100 text-slate-600",
+                                                                children: partner.type === 'NATIONAL' ? 'Үндэсний' : partner.type === 'INTERNATIONAL' ? 'Олон улсын' : partner.type
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                                lineNumber: 276,
+                                                                lineNumber: 279,
                                                                 columnNumber: 49
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                        lineNumber: 274,
+                                                        lineNumber: 277,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -510,7 +536,7 @@ function PartnersAdminPage() {
                                                                 children: "Засах"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                                lineNumber: 279,
+                                                                lineNumber: 284,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -519,40 +545,40 @@ function PartnersAdminPage() {
                                                                 children: "Устгах"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                                lineNumber: 285,
+                                                                lineNumber: 290,
                                                                 columnNumber: 49
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                        lineNumber: 278,
+                                                        lineNumber: 283,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, partner.id, true, {
                                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                                lineNumber: 261,
+                                                lineNumber: 264,
                                                 columnNumber: 41
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/admin/partners/page.tsx",
-                                        lineNumber: 252,
+                                        lineNumber: 255,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/admin/partners/page.tsx",
-                                lineNumber: 244,
+                                lineNumber: 247,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/partners/page.tsx",
-                            lineNumber: 243,
+                            lineNumber: 246,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/admin/partners/page.tsx",
-                        lineNumber: 242,
+                        lineNumber: 245,
                         columnNumber: 17
                     }, this)
                 ]

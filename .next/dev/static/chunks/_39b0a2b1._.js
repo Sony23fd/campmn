@@ -19,6 +19,7 @@ function AdminHomeSettings() {
     const [settings, setSettings] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         heroTitle: "Монголын Зуслангийн Салбарын 100 Жилийн Ой",
         heroSubtitle: "Хүүхдийн хөгжил, хамгаалал, оролцоонд суурилсан зуслангийн хөгжлийн үндэсний тогтолцоо.",
+        heroImage: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1500&auto=format&fit=crop",
         stat1Year: "2006",
         stat1Label: "Байгуулагдсан он",
         stat2Number: "100+",
@@ -98,12 +99,12 @@ function AdminHomeSettings() {
                 className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary"
             }, void 0, false, {
                 fileName: "[project]/src/app/admin/home/page.tsx",
-                lineNumber: 77,
+                lineNumber: 78,
                 columnNumber: 71
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/admin/home/page.tsx",
-            lineNumber: 77,
+            lineNumber: 78,
             columnNumber: 16
         }, this);
     }
@@ -119,7 +120,7 @@ function AdminHomeSettings() {
                             children: "Нүүр Хуудас"
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/home/page.tsx",
-                            lineNumber: 84,
+                            lineNumber: 85,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -127,18 +128,18 @@ function AdminHomeSettings() {
                             children: "Нүүр хуудсанд харагдах текстүүд болон статистик үзүүлэлтүүд."
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/home/page.tsx",
-                            lineNumber: 85,
+                            lineNumber: 86,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/admin/home/page.tsx",
-                    lineNumber: 83,
+                    lineNumber: 84,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/admin/home/page.tsx",
-                lineNumber: 82,
+                lineNumber: 83,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -150,7 +151,7 @@ function AdminHomeSettings() {
                         children: message
                     }, void 0, false, {
                         fileName: "[project]/src/app/admin/home/page.tsx",
-                        lineNumber: 91,
+                        lineNumber: 92,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -161,7 +162,7 @@ function AdminHomeSettings() {
                                 children: "Нүүр Хэсэг (Hero Section)"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                lineNumber: 97,
+                                lineNumber: 98,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -172,7 +173,7 @@ function AdminHomeSettings() {
                                         children: "Үндсэн Гарчиг"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 100,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -183,13 +184,13 @@ function AdminHomeSettings() {
                                         className: "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 101,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                lineNumber: 98,
+                                lineNumber: 99,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -200,7 +201,7 @@ function AdminHomeSettings() {
                                         children: "Дэд Тайлбар"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 110,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -211,19 +212,64 @@ function AdminHomeSettings() {
                                         className: "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 111,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                lineNumber: 108,
+                                lineNumber: 109,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: "text-sm font-medium leading-none",
+                                        children: "Зурагны холбоос (URL)"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                        lineNumber: 120,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        type: "text",
+                                        name: "heroImage",
+                                        value: settings.heroImage,
+                                        onChange: handleChange,
+                                        placeholder: "Жишээ: https://images.unsplash.com/...",
+                                        className: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                        lineNumber: 121,
+                                        columnNumber: 25
+                                    }, this),
+                                    settings.heroImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mt-2 w-48 aspect-[4/5] rounded-xl overflow-hidden border",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: settings.heroImage,
+                                            alt: "Hero Preview",
+                                            className: "w-full h-full object-cover"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/admin/home/page.tsx",
+                                            lineNumber: 131,
+                                            columnNumber: 33
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                        lineNumber: 130,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/admin/home/page.tsx",
+                                lineNumber: 119,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/admin/home/page.tsx",
-                        lineNumber: 96,
+                        lineNumber: 97,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -234,7 +280,7 @@ function AdminHomeSettings() {
                                 children: "Статистик үзүүлэлтүүд"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                lineNumber: 121,
+                                lineNumber: 138,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -248,7 +294,7 @@ function AdminHomeSettings() {
                                                 children: "Блок 1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 143,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -257,107 +303,6 @@ function AdminHomeSettings() {
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                         className: "text-xs font-medium",
                                                         children: "Тоо тооцоолол"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 128,
-                                                        columnNumber: 33
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "text",
-                                                        name: "stat1Year",
-                                                        value: settings.stat1Year,
-                                                        onChange: handleChange,
-                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 129,
-                                                        columnNumber: 33
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 127,
-                                                columnNumber: 29
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "text-xs font-medium",
-                                                        children: "Тайлбар"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 132,
-                                                        columnNumber: 33
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "text",
-                                                        name: "stat1Label",
-                                                        value: settings.stat1Label,
-                                                        onChange: handleChange,
-                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 133,
-                                                        columnNumber: 33
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 131,
-                                                columnNumber: 29
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 125,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "space-y-3 p-4 bg-slate-50 border rounded-lg",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "font-medium text-sm text-slate-500",
-                                                children: "Блок 2"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 139,
-                                                columnNumber: 29
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "text-xs font-medium",
-                                                        children: "Тоо тооцоолол"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 141,
-                                                        columnNumber: 33
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "text",
-                                                        name: "stat2Number",
-                                                        value: settings.stat2Number,
-                                                        onChange: handleChange,
-                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 142,
-                                                        columnNumber: 33
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 140,
-                                                columnNumber: 29
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "text-xs font-medium",
-                                                        children: "Тайлбар"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/admin/home/page.tsx",
                                                         lineNumber: 145,
@@ -365,8 +310,8 @@ function AdminHomeSettings() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                         type: "text",
-                                                        name: "stat2Label",
-                                                        value: settings.stat2Label,
+                                                        name: "stat1Year",
+                                                        value: settings.stat1Year,
                                                         onChange: handleChange,
                                                         className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
                                                     }, void 0, false, {
@@ -379,11 +324,39 @@ function AdminHomeSettings() {
                                                 fileName: "[project]/src/app/admin/home/page.tsx",
                                                 lineNumber: 144,
                                                 columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                        className: "text-xs font-medium",
+                                                        children: "Тайлбар"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 149,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        name: "stat1Label",
+                                                        value: settings.stat1Label,
+                                                        onChange: handleChange,
+                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 150,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/admin/home/page.tsx",
+                                                lineNumber: 148,
+                                                columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 138,
+                                        lineNumber: 142,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -391,10 +364,10 @@ function AdminHomeSettings() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "font-medium text-sm text-slate-500",
-                                                children: "Блок 3"
+                                                children: "Блок 2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 152,
+                                                lineNumber: 156,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -405,41 +378,13 @@ function AdminHomeSettings() {
                                                         children: "Тоо тооцоолол"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 154,
-                                                        columnNumber: 33
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "text",
-                                                        name: "stat3Year",
-                                                        value: settings.stat3Year,
-                                                        onChange: handleChange,
-                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 155,
-                                                        columnNumber: 33
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 153,
-                                                columnNumber: 29
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "text-xs font-medium",
-                                                        children: "Тайлбар"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
                                                         lineNumber: 158,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                         type: "text",
-                                                        name: "stat3Label",
-                                                        value: settings.stat3Label,
+                                                        name: "stat2Number",
+                                                        value: settings.stat2Number,
                                                         onChange: handleChange,
                                                         className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
                                                     }, void 0, false, {
@@ -452,11 +397,39 @@ function AdminHomeSettings() {
                                                 fileName: "[project]/src/app/admin/home/page.tsx",
                                                 lineNumber: 157,
                                                 columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                        className: "text-xs font-medium",
+                                                        children: "Тайлбар"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 162,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        name: "stat2Label",
+                                                        value: settings.stat2Label,
+                                                        onChange: handleChange,
+                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 163,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/admin/home/page.tsx",
+                                                lineNumber: 161,
+                                                columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 155,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -464,10 +437,10 @@ function AdminHomeSettings() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "font-medium text-sm text-slate-500",
-                                                children: "Блок 4"
+                                                children: "Блок 3"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 169,
                                                 columnNumber: 29
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -478,41 +451,13 @@ function AdminHomeSettings() {
                                                         children: "Тоо тооцоолол"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 167,
-                                                        columnNumber: 33
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                        type: "text",
-                                                        name: "stat4Number",
-                                                        value: settings.stat4Number,
-                                                        onChange: handleChange,
-                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
-                                                        lineNumber: 168,
-                                                        columnNumber: 33
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/app/admin/home/page.tsx",
-                                                lineNumber: 166,
-                                                columnNumber: 29
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "space-y-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: "text-xs font-medium",
-                                                        children: "Тайлбар"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/admin/home/page.tsx",
                                                         lineNumber: 171,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                         type: "text",
-                                                        name: "stat4Label",
-                                                        value: settings.stat4Label,
+                                                        name: "stat3Year",
+                                                        value: settings.stat3Year,
                                                         onChange: handleChange,
                                                         className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
                                                     }, void 0, false, {
@@ -525,23 +470,124 @@ function AdminHomeSettings() {
                                                 fileName: "[project]/src/app/admin/home/page.tsx",
                                                 lineNumber: 170,
                                                 columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                        className: "text-xs font-medium",
+                                                        children: "Тайлбар"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 175,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        name: "stat3Label",
+                                                        value: settings.stat3Label,
+                                                        onChange: handleChange,
+                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 176,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/admin/home/page.tsx",
+                                                lineNumber: 174,
+                                                columnNumber: 29
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/admin/home/page.tsx",
-                                        lineNumber: 164,
+                                        lineNumber: 168,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-3 p-4 bg-slate-50 border rounded-lg",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "font-medium text-sm text-slate-500",
+                                                children: "Блок 4"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/admin/home/page.tsx",
+                                                lineNumber: 182,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                        className: "text-xs font-medium",
+                                                        children: "Тоо тооцоолол"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 184,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        name: "stat4Number",
+                                                        value: settings.stat4Number,
+                                                        onChange: handleChange,
+                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 185,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/admin/home/page.tsx",
+                                                lineNumber: 183,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                        className: "text-xs font-medium",
+                                                        children: "Тайлбар"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 188,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        name: "stat4Label",
+                                                        value: settings.stat4Label,
+                                                        onChange: handleChange,
+                                                        className: "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                                        lineNumber: 189,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/admin/home/page.tsx",
+                                                lineNumber: 187,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/admin/home/page.tsx",
+                                        lineNumber: 181,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                lineNumber: 123,
+                                lineNumber: 140,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/admin/home/page.tsx",
-                        lineNumber: 120,
+                        lineNumber: 137,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -554,7 +600,7 @@ function AdminHomeSettings() {
                                 children: "Буцах"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                lineNumber: 179,
+                                lineNumber: 196,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -564,29 +610,29 @@ function AdminHomeSettings() {
                                 children: saving ? "Хадгалж байна..." : "Хадгалах"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/admin/home/page.tsx",
-                                lineNumber: 186,
+                                lineNumber: 203,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/admin/home/page.tsx",
-                        lineNumber: 178,
+                        lineNumber: 195,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/admin/home/page.tsx",
-                lineNumber: 89,
+                lineNumber: 90,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/admin/home/page.tsx",
-        lineNumber: 81,
+        lineNumber: 82,
         columnNumber: 9
     }, this);
 }
-_s(AdminHomeSettings, "jAZi2GD7f+zUgrfNBti+ib1ZeM4=", false, function() {
+_s(AdminHomeSettings, "GFAXMocfPKJw+MHjKS9corKuEJs=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
